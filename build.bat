@@ -7,9 +7,11 @@ REM Сборка патченного APK и подпись
 REM ============================================================
 
 set TOOLS_DIR=D:\Antigravity\TapTaxi\tools
+set BUILD_TOOLS=D:\Antigravity\TapTaxi\_android_sdk\build-tools\36.0.0
 set APKTOOL=%TOOLS_DIR%\apktool.jar
 set DECOMPILED=D:\Antigravity\TakerTap\decompiled
 set OUTPUT_APK=D:\Antigravity\TakerTap\TakerTap_unsigned.apk
+set ALIGNED_APK=D:\Antigravity\TakerTap\TakerTap_aligned.apk
 set SIGNED_APK=D:\Antigravity\TakerTap\TakerTap_signed.apk
 set KEYSTORE=%TOOLS_DIR%\my-release-key.jks
 
@@ -22,7 +24,17 @@ if errorlevel 1 (
 )
 echo OK: %OUTPUT_APK%
 
-echo [2/3] Подпись APK...
+echo [2/4] zipalign...
+if exist "%ALIGNED_APK%" del "%ALIGNED_APK%"
+"%BUILD_TOOLS%\zipalign.exe" -p -f 4 "%OUTPUT_APK%" "%ALIGNED_APK%"
+if errorlevel 1 (
+    echo ОШИБКА при zipalign!
+    pause
+    exit /b 1
+)
+echo OK: %ALIGNED_APK%
+
+echo [3/4] Подпись APK...
 REM Если keystore нет — создаём тестовый
 if not exist "%KEYSTORE%" (
     echo Создаём тестовый keystore...
@@ -33,15 +45,18 @@ if not exist "%KEYSTORE%" (
 
 REM Подпись через apksigner (из Android SDK build-tools)
 REM Если apksigner недоступен, используем jarsigner
-where apksigner >nul 2>&1
-if %errorlevel%==0 (
-    apksigner sign --ks "%KEYSTORE%" --ks-pass pass:android --key-pass pass:android ^
-        --out "%SIGNED_APK%" "%OUTPUT_APK%"
+if exist "%BUILD_TOOLS%\apksigner.bat" (
+    "%BUILD_TOOLS%\apksigner.bat" sign ^
+        --ks "%KEYSTORE%" --ks-pass pass:android --key-pass pass:android ^
+        --v1-signing-enabled true ^
+        --v2-signing-enabled true ^
+        --v3-signing-enabled true ^
+        --out "%SIGNED_APK%" "%ALIGNED_APK%"
 ) else (
     echo Используем jarsigner...
-    jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 ^
+    jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 ^
         -keystore "%KEYSTORE%" -storepass android -keypass android ^
-        -signedjar "%SIGNED_APK%" "%OUTPUT_APK%" mykey
+        -signedjar "%SIGNED_APK%" "%ALIGNED_APK%" mykey
 )
 
 if errorlevel 1 (
@@ -50,7 +65,7 @@ if errorlevel 1 (
     exit /b 1
 )
 
-echo [3/3] Готово!
+echo [4/4] Готово!
 echo Подписанный APK: %SIGNED_APK%
 echo.
 echo Установите на телефон:

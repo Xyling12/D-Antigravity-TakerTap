@@ -13,7 +13,7 @@
     .locals 2
 
     # === СЮДА ВБИТЬ IP VPS И ТОКЕН ===
-    const-string v0, "http://YOUR_VPS_IP:8080"
+    const-string v0, "http://185.171.82.112:8080"
     sput-object v0, Lcom/soft373/taxi/services/AutoAcceptHelper;->SERVER_URL:Ljava/lang/String;
 
     const-string v0, "change_me_in_env"
@@ -86,6 +86,20 @@
     invoke-static {p2}, Lcom/soft373/taxi/services/AutoAcceptHelper;->normalize(Ljava/lang/String;)Ljava/lang/String;
     move-result-object v2
 
+    # Log.d("TakerTap", "[Check] from=" + v1 + " to=" + v2)
+    const-string v3, "TakerTap"
+    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v5, "[Check] from="
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v5, " to="
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v5
+    invoke-static {v3, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     # lines = routesText.split("\n")
     const-string v3, "\n"
     invoke-virtual {v0, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -138,7 +152,19 @@
     move-result v8
     if-eqz v8, :next
 
-    # MATCH!
+    # MATCH! Log.d("TakerTap", "[ACCEPT] from->to")
+    const-string v7, "TakerTap"
+    new-instance v8, Ljava/lang/StringBuilder;
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v9, "[ACCEPT] "
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v9, "->"
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v9
+    invoke-static {v7, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     const/4 v0, 0x1
     return v0
 
@@ -147,6 +173,19 @@
     goto :loop
 
     :ret_false
+    # Log.d("TakerTap", "[SKIP] from->to")
+    const-string v0, "TakerTap"
+    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "[SKIP] "
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "->"
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     const/4 v0, 0x0
     return v0
 .end method
@@ -188,5 +227,44 @@
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     :ret
+    return-void
+.end method
+
+
+# postLog(fromCity, toCity, orderId, price) - POST /log на сервер в фоне
+.method public static postLog(Ljava/lang/String;Ljava/lang/String;II)V
+    .locals 3
+
+    new-instance v0, Ljava/lang/Thread;
+
+    new-instance v1, Lcom/soft373/taxi/services/AutoAcceptHelper$LogRunnable;
+
+    invoke-direct {v1, p0, p1, p2, p3}, Lcom/soft373/taxi/services/AutoAcceptHelper$LogRunnable;-><init>(Ljava/lang/String;Ljava/lang/String;II)V
+
+    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    const-string v2, "TakerTapLog"
+
+    invoke-virtual {v0, v2}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    return-void
+.end method
+
+
+# autoAcceptFreeOrderAsync(orderId, fromCity, toCity, price)
+# Принимает свободный заказ через reflection NetworkService.U() в фоновом потоке
+.method public static autoAcceptFreeOrderAsync(ILjava/lang/String;Ljava/lang/String;I)V
+    .locals 3
+
+    new-instance v0, Ljava/lang/Thread;
+    new-instance v1, Lcom/soft373/taxi/services/AutoAcceptHelper$FreeAcceptRunnable;
+    invoke-direct {v1, p0, p1, p2, p3}, Lcom/soft373/taxi/services/AutoAcceptHelper$FreeAcceptRunnable;-><init>(ILjava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+    const-string v2, "TakerTapFreeAccept"
+    invoke-virtual {v0, v2}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
     return-void
 .end method

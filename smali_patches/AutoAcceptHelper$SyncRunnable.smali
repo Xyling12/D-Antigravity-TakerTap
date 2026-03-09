@@ -28,6 +28,17 @@
     invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
     move-result-object v0
 
+    # Log.d("TakerTap", "Sync start: " + urlStr)
+    const-string v1, "TakerTap"
+    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "[Sync] GET "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v3
+    invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     # new URL(urlStr)
     new-instance v1, Ljava/net/URL;
     invoke-direct {v1, v0}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
@@ -48,6 +59,28 @@
     const-string v2, "x-token"
     sget-object v3, Lcom/soft373/taxi/services/AutoAcceptHelper;->API_TOKEN:Ljava/lang/String;
     invoke-virtual {v1, v2, v3}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    # responseCode = conn.getResponseCode()
+    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
+    move-result v2
+
+    # Log.d("TakerTap", "Sync code: " + responseCode)
+    const-string v3, "TakerTap"
+    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v5, "[Sync] HTTP "
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v5
+    invoke-static {v3, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    # only HTTP 200 is accepted for config payload
+    const/16 v3, 0xc8
+    if-eq v2, v3, :sync_code_ok
+    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
+    return-void
+    :sync_code_ok
 
     # is = conn.getInputStream()
     invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
@@ -75,6 +108,13 @@
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     const-string v7, "\n"
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    # hard limit to protect against oversized responses
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->length()I
+    move-result v7
+    const v8, 0x10000
+    if-ge v7, v8, :read_done
+
     goto :read_loop
 
     :read_done
@@ -84,6 +124,19 @@
     # result = sb.toString()
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
     move-result-object v5
+
+    # Log.d("TakerTap", "Sync routes_len: " + result.length())
+    const-string v6, "TakerTap"
+    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v8, "[Sync] routes_len: "
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+    move-result v9
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v8
+    invoke-static {v6, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     # prefs = ctx.getSharedPreferences("takertap_prefs", 0)
     iget-object v6, p0, Lcom/soft373/taxi/services/AutoAcceptHelper$SyncRunnable;->ctx:Landroid/content/Context;
@@ -106,6 +159,21 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    return-void
+
     :catch_0
+    # Log.e("TakerTap", "Sync error: " + e.getMessage())
+    move-exception v0
+    const-string v1, "TakerTap"
+    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "[Sync] ERROR: "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    move-result-object v3
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v3
+    invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     return-void
 .end method

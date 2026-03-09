@@ -1,8 +1,9 @@
 # Декомпилированный APK (слишком большой)
 decompiled/
 
-# APK-файлы
+# APK-файлы (бинарные сборки)
 *.apk
+*.apk.idsig
 
 # Keystore (секрет)
 *.jks
@@ -20,3 +21,24 @@ venv/
 
 # Логи
 *.log
+
+# Base64 дампы
+*.b64
+
+# Директории отладки / сравнения
+_cmp_bad/
+_cmp_bad_smali/
+_cmp_good/
+_cmp_good_smali/
+
+# Захват с устройства (логи, дампы APK, сканы)
+device_capture/
+
+# Модуль (вспомогательный APK)
+modul/
+
+# Сессионные отчёты (лежат в репо как markdown, но не являются кодом)
+# SESSION_RESULT_*.md — оставляем, это документация
+
+# GitHub Actions artifacts
+*.zip

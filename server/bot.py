@@ -13,9 +13,9 @@ from telegram.ext import (
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# ─── Настройки (задаются через переменные окружения или заполняются вручную) ───
+# ─── Настройки ────────────────────────────────────────────────────────────────
 BOT_TOKEN   = os.environ.get("BOT_TOKEN",    "8796663182:AAHP86MD-fOyjdepGLAlfjcnJUpnITuG_1M")
-SERVER_URL  = os.environ.get("SERVER_URL",   "http://localhost:8080")      # заменить на IP VPS
+SERVER_URL  = os.environ.get("SERVER_URL",   "http://185.171.82.112:8080")
 API_TOKEN   = os.environ.get("TAKERTAP_TOKEN", "change_me_in_env")
 ALLOWED_IDS = set(map(int, os.environ.get("ALLOWED_IDS", "").split(","))) if os.environ.get("ALLOWED_IDS") else set()
 
@@ -26,7 +26,7 @@ HEADERS = {"x-token": API_TOKEN}
 
 def is_allowed(update: Update) -> bool:
     if not ALLOWED_IDS:
-        return True   # если список пуст — разрешаем всем (для первого запуска)
+        return True
     return update.effective_user.id in ALLOWED_IDS
 
 
@@ -54,7 +54,10 @@ async def cmd_start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         "`/list` — список активных маршрутов\n"
         "`/log` — последние 15 принятых/отклонённых заказов\n"
         "`/status` — статистика за сегодня\n"
-        "`/id` — ваш Telegram ID (для настройки)"
+        "`/adduser ID` — добавить пользователя (получает пуши)\n"
+        "`/removeuser ID` — удалить пользователя\n"
+        "`/users` — список пользователей\n"
+        "`/id` — ваш Telegram ID"
     )
     await update.message.reply_text(text, parse_mode="Markdown")
 
@@ -153,18 +156,63 @@ async def cmd_status(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(f"❌ Ошибка: {e}")
 
 
+async def cmd_adduser(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    if not is_allowed(update):
+        return
+    if not ctx.args:
+        await update.message.reply_text("Использование: `/adduser TELEGRAM_ID`", parse_mode="Markdown")
+        return
+    tg_id = ctx.args[0].strip()
+    try:
+        api("post", "/users/add", json={"tg_id": tg_id})
+        await update.message.reply_text(f"✅ Пользователь `{tg_id}` добавлен", parse_mode="Markdown")
+    except Exception as e:
+        await update.message.reply_text(f"❌ Ошибка: {e}")
+
+
+async def cmd_removeuser(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    if not is_allowed(update):
+        return
+    if not ctx.args:
+        await update.message.reply_text("Использование: `/removeuser TELEGRAM_ID`", parse_mode="Markdown")
+        return
+    tg_id = ctx.args[0].strip()
+    try:
+        api("post", "/users/remove", json={"tg_id": tg_id})
+        await update.message.reply_text(f"🗑 Пользователь `{tg_id}` удалён", parse_mode="Markdown")
+    except Exception as e:
+        await update.message.reply_text(f"❌ Ошибка: {e}")
+
+
+async def cmd_users(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    if not is_allowed(update):
+        return
+    try:
+        data = api("get", "/users")
+        if not data:
+            await update.message.reply_text("👥 Нет пользователей")
+            return
+        lines = [f"• `{r['tg_id']}` (с {r['added'][:10]})" for r in data]
+        await update.message.reply_text("👥 *Пользователи:*\n" + "\n".join(lines), parse_mode="Markdown")
+    except Exception as e:
+        await update.message.reply_text(f"❌ Ошибка: {e}")
+
+
 # ─── Запуск ────────────────────────────────────────────────────────────────────
 
 def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
-    app.add_handler(CommandHandler("start",  cmd_start))
-    app.add_handler(CommandHandler("help",   cmd_start))
-    app.add_handler(CommandHandler("id",     cmd_id))
-    app.add_handler(CommandHandler("add",    cmd_add))
-    app.add_handler(CommandHandler("remove", cmd_remove))
-    app.add_handler(CommandHandler("list",   cmd_list))
-    app.add_handler(CommandHandler("log",    cmd_log))
-    app.add_handler(CommandHandler("status", cmd_status))
+    app.add_handler(CommandHandler("start",       cmd_start))
+    app.add_handler(CommandHandler("help",        cmd_start))
+    app.add_handler(CommandHandler("id",          cmd_id))
+    app.add_handler(CommandHandler("add",         cmd_add))
+    app.add_handler(CommandHandler("remove",      cmd_remove))
+    app.add_handler(CommandHandler("list",        cmd_list))
+    app.add_handler(CommandHandler("log",         cmd_log))
+    app.add_handler(CommandHandler("status",      cmd_status))
+    app.add_handler(CommandHandler("adduser",     cmd_adduser))
+    app.add_handler(CommandHandler("removeuser",  cmd_removeuser))
+    app.add_handler(CommandHandler("users",       cmd_users))
     logger.info("TakerTap Bot запущен")
     app.run_polling()
 

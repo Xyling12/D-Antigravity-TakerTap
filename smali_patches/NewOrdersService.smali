@@ -92,6 +92,12 @@
     # autoAccept(intent)
     invoke-virtual {p0, v5}, Lcom/soft373/taxi/services/NewOrdersServiceBase;->autoAccept(Landroid/content/Intent;)V
 
+    # postLog(fromCity, toCity, orderId, price=0)
+    invoke-virtual {v1}, Lcom/soft373/taxi/data/DetailedOrder;->getId()I
+    move-result v7
+    const/4 v8, 0x0
+    invoke-static {v2, v3, v7, v8}, Lcom/soft373/taxi/services/AutoAcceptHelper;->postLog(Ljava/lang/String;Ljava/lang/String;II)V
+
     return-void
 
     :aa_skip
