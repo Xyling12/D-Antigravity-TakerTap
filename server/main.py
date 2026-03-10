@@ -16,9 +16,12 @@ import uvicorn
 app = FastAPI(title="TakerTap Server", version="1.0.0")
 
 DB_PATH    = os.path.join(os.path.dirname(__file__), "takertap.db")
-API_TOKEN  = os.environ.get("TAKERTAP_TOKEN", "change_me_in_env")
+API_TOKEN  = os.environ.get("TAKERTAP_TOKEN", "").strip()
+if not API_TOKEN:
+    raise RuntimeError("Environment variable 'TAKERTAP_TOKEN' is required but not set")
 BOT_TOKEN  = os.environ.get("BOT_TOKEN", "")
 NOTIFY_IDS = [i.strip() for i in os.environ.get("ALLOWED_IDS", "").split(",") if i.strip()]
+
 
 
 def send_tg_notify(text: str):

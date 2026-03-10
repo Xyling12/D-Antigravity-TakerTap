@@ -14,9 +14,15 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # ─── Настройки ────────────────────────────────────────────────────────────────
-BOT_TOKEN   = os.environ.get("BOT_TOKEN",    "8796663182:AAHP86MD-fOyjdepGLAlfjcnJUpnITuG_1M")
-SERVER_URL  = os.environ.get("SERVER_URL",   "http://185.171.82.112:8080")
-API_TOKEN   = os.environ.get("TAKERTAP_TOKEN", "change_me_in_env")
+def _require_env(name: str) -> str:
+    val = os.environ.get(name, "").strip()
+    if not val:
+        raise RuntimeError(f"Environment variable {name!r} is required but not set")
+    return val
+
+BOT_TOKEN   = _require_env("BOT_TOKEN")
+SERVER_URL  = _require_env("SERVER_URL")
+API_TOKEN   = _require_env("TAKERTAP_TOKEN")
 ALLOWED_IDS = set(map(int, os.environ.get("ALLOWED_IDS", "").split(","))) if os.environ.get("ALLOWED_IDS") else set()
 
 HEADERS = {"x-token": API_TOKEN}
