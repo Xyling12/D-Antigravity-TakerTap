@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/menu_error_activity" android:title="@string/send_logs" android:showAsAction="never" />
+    <item android:id="@id/menu_test_sounds_activity" android:title="Test sounds" android:showAsAction="never" />
+</menu>

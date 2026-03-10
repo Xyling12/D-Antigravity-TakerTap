@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/vBg" android:background="@color/main_background" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/ivIcon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_fast" />
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="14.0dip" android:textColor="@color/almost_white" android:id="@id/tvRating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawableStart="@drawable/ic_user_rating" />
+</LinearLayout>

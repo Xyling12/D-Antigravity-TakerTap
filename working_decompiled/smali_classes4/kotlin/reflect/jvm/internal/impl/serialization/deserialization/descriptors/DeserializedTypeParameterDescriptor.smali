@@ -1,0 +1,304 @@
+.class public final Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;
+.super Lkotlin/reflect/jvm/internal/impl/descriptors/impl/feyxvdiekx;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nDeserializedTypeParameterDescriptor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DeserializedTypeParameterDescriptor.kt\norg/jetbrains/kotlin/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,58:1\n1549#2:59\n1620#2,3:60\n*S KotlinDebug\n*F\n+ 1 DeserializedTypeParameterDescriptor.kt\norg/jetbrains/kotlin/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor\n*L\n51#1:59\n51#1:60,3\n*E\n"
+.end annotation
+
+.annotation build Lkotlin/jvm/internal/qzbvjsuekv;
+    value = {
+        "SMAP\nDeserializedTypeParameterDescriptor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DeserializedTypeParameterDescriptor.kt\norg/jetbrains/kotlin/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,58:1\n1549#2:59\n1620#2,3:60\n*S KotlinDebug\n*F\n+ 1 DeserializedTypeParameterDescriptor.kt\norg/jetbrains/kotlin/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor\n*L\n51#1:59\n51#1:60,3\n*E\n"
+    }
+.end annotation
+
+
+# instance fields
+.field private final ccizhaobjz:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/feyxvdiekx;
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+.end field
+
+.field private final nnzwevhkoa:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+.end field
+
+.field private final skopevfyym:Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter;
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter;I)V
+    .locals 11
+    .param p1    # Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .param p2    # Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+
+    const-string v0, "c"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "proto"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;->kgyfkythat()Lkotlin/reflect/jvm/internal/impl/storage/rmnxkaltsn;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;->qhoahqxrkc()Lkotlin/reflect/jvm/internal/impl/descriptors/ktvtxjqbtt;
+
+    move-result-object v3
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/qhoahqxrkc;->lrtruanqwg:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/qhoahqxrkc$qfzjddwuyn;
+
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/qhoahqxrkc$qfzjddwuyn;->feyxvdiekx()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/qhoahqxrkc;
+
+    move-result-object v4
+
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;->nhdortzefg()Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/khjnvckbwi;
+
+    move-result-object v0
+
+    invoke-virtual {p2}, Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter;->getName()I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/vlnjtcdbbq;->feyxvdiekx(Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/khjnvckbwi;I)Lkotlin/reflect/jvm/internal/impl/name/extxjewlhp;
+
+    move-result-object v5
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/jodmjjzdpr;->qfzjddwuyn:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/jodmjjzdpr;
+
+    invoke-virtual {p2}, Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter;->getVariance()Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter$Variance;
+
+    move-result-object v1
+
+    const-string v6, "proto.variance"
+
+    invoke-static {v1, v6}, Lkotlin/jvm/internal/erplbhbeyt;->thjjozpxyz(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/jodmjjzdpr;->ibzphkbtmt(Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter$Variance;)Lkotlin/reflect/jvm/internal/impl/types/Variance;
+
+    move-result-object v6
+
+    invoke-virtual {p2}, Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter;->getReified()Z
+
+    move-result v7
+
+    sget-object v9, Lkotlin/reflect/jvm/internal/impl/descriptors/qzbvjsuekv;->qfzjddwuyn:Lkotlin/reflect/jvm/internal/impl/descriptors/qzbvjsuekv;
+
+    sget-object v10, Lkotlin/reflect/jvm/internal/impl/descriptors/epwdywcysm$qfzjddwuyn;->qfzjddwuyn:Lkotlin/reflect/jvm/internal/impl/descriptors/epwdywcysm$qfzjddwuyn;
+
+    move-object v1, p0
+
+    move v8, p3
+
+    invoke-direct/range {v1 .. v10}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/feyxvdiekx;-><init>(Lkotlin/reflect/jvm/internal/impl/storage/rmnxkaltsn;Lkotlin/reflect/jvm/internal/impl/descriptors/ktvtxjqbtt;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/qhoahqxrkc;Lkotlin/reflect/jvm/internal/impl/name/extxjewlhp;Lkotlin/reflect/jvm/internal/impl/types/Variance;ZILkotlin/reflect/jvm/internal/impl/descriptors/qzbvjsuekv;Lkotlin/reflect/jvm/internal/impl/descriptors/epwdywcysm;)V
+
+    iput-object p1, v1, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;->nnzwevhkoa:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;
+
+    iput-object p2, v1, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;->skopevfyym:Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter;
+
+    new-instance p2, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/feyxvdiekx;
+
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;->kgyfkythat()Lkotlin/reflect/jvm/internal/impl/storage/rmnxkaltsn;
+
+    move-result-object p1
+
+    new-instance p3, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor$annotations$1;
+
+    invoke-direct {p3, p0}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor$annotations$1;-><init>(Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;)V
+
+    invoke-direct {p2, p1, p3}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/feyxvdiekx;-><init>(Lkotlin/reflect/jvm/internal/impl/storage/rmnxkaltsn;Ls3/qfzjddwuyn;)V
+
+    iput-object p2, v1, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;->ccizhaobjz:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/feyxvdiekx;
+
+    return-void
+.end method
+
+.method public static final synthetic vejlvqbybc(Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;)Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;
+    .locals 0
+
+    iget-object p0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;->nnzwevhkoa:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public bridge synthetic bayimxdfur(Lkotlin/reflect/jvm/internal/impl/types/jolohcwnyk;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;->eaxiiuhive(Lkotlin/reflect/jvm/internal/impl/types/jolohcwnyk;)Ljava/lang/Void;
+
+    return-void
+.end method
+
+.method public final drqjxucmoe()Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter;
+    .locals 1
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;->skopevfyym:Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter;
+
+    return-object v0
+.end method
+
+.method protected eaxiiuhive(Lkotlin/reflect/jvm/internal/impl/types/jolohcwnyk;)Ljava/lang/Void;
+    .locals 2
+    .param p1    # Lkotlin/reflect/jvm/internal/impl/types/jolohcwnyk;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    const-string v0, "type"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "There should be no cycles for deserialized type parameters, but found for: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public bridge synthetic getAnnotations()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/qhoahqxrkc;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;->uxoafglpkw()Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/feyxvdiekx;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected nuuhnxocxs()Ljava/util/List;
+    .locals 4
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/types/jolohcwnyk;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;->skopevfyym:Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter;
+
+    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;->nnzwevhkoa:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;
+
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;->tthmnequln()Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/nhdortzefg;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/extxjewlhp;->ldyhhegomq(Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter;Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/nhdortzefg;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt;->tthmnequln(Lkotlin/reflect/jvm/internal/impl/descriptors/ktvtxjqbtt;)Lkotlin/reflect/jvm/internal/impl/builtins/extxjewlhp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/builtins/extxjewlhp;->bdweufyeak()Lkotlin/reflect/jvm/internal/impl/types/fdbcgriwfo;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/collections/pednzybqgd;->ktvtxjqbtt(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    check-cast v0, Ljava/lang/Iterable;
+
+    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;->nnzwevhkoa:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;
+
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/tthmnequln;->drkbbjxjkt()Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/TypeDeserializer;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    const/16 v3, 0xa
+
+    invoke-static {v0, v3}, Lkotlin/collections/pednzybqgd;->sqegvvfvzl(Ljava/lang/Iterable;I)I
+
+    move-result v3
+
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Type;
+
+    invoke-virtual {v1, v3}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/TypeDeserializer;->ewnfwzyokr(Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Type;)Lkotlin/reflect/jvm/internal/impl/types/jolohcwnyk;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    return-object v2
+.end method
+
+.method public uxoafglpkw()Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/feyxvdiekx;
+    .locals 1
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedTypeParameterDescriptor;->ccizhaobjz:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/feyxvdiekx;
+
+    return-object v0
+.end method

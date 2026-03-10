@@ -42,3 +42,8 @@ modul/
 
 # GitHub Actions artifacts
 *.zip
+
+# Apktool build cache
+working_decompiled/build/
+decompiled/build/
+thin_patch_v2_decompiled/

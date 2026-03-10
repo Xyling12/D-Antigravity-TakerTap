@@ -1,0 +1,70 @@
+.class Landroidx/constraintlayout/motion/widget/opauvyugnb$ibzphkbtmt;
+.super Landroidx/constraintlayout/motion/widget/opauvyugnb;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/constraintlayout/motion/widget/opauvyugnb;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x8
+    name = "ibzphkbtmt"
+.end annotation
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/opauvyugnb;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public ktvtxjqbtt(Landroid/view/View;Landroidx/constraintlayout/motion/widget/nhdortzefg;FJDD)Z
+    .locals 6
+
+    move-object v0, p0
+
+    move-object v4, p1
+
+    move-object v5, p2
+
+    move v1, p3
+
+    move-wide v2, p4
+
+    invoke-virtual/range {v0 .. v5}, Landroidx/constraintlayout/motion/widget/opauvyugnb;->feyxvdiekx(FJLandroid/view/View;Landroidx/constraintlayout/motion/widget/nhdortzefg;)F
+
+    move-result p1
+
+    invoke-static {p8, p9, p6, p7}, Ljava/lang/Math;->atan2(DD)D
+
+    move-result-wide p2
+
+    invoke-static {p2, p3}, Ljava/lang/Math;->toDegrees(D)D
+
+    move-result-wide p2
+
+    double-to-float p2, p2
+
+    add-float/2addr p1, p2
+
+    invoke-virtual {v4, p1}, Landroid/view/View;->setRotation(F)V
+
+    iget-boolean p1, v0, Landroidx/constraintlayout/motion/widget/opauvyugnb;->kgyfkythat:Z
+
+    return p1
+.end method
+
+.method public nhdortzefg(Landroid/view/View;FJLandroidx/constraintlayout/motion/widget/nhdortzefg;)Z
+    .locals 0
+
+    iget-boolean p1, p0, Landroidx/constraintlayout/motion/widget/opauvyugnb;->kgyfkythat:Z
+
+    return p1
+.end method

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinator" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" app:contentInsetLeft="@dimen/toolbar_left" app:contentInsetStart="@dimen/toolbar_left" app:popupTheme="@style/ToolbarTheme" style="@style/HeaderBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout android:id="@id/wrapper" android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:baselineAligned="false">
+            <ScrollView android:scrollbars="none" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:layout_marginStart="@dimen/margin_lls" android:layout_marginEnd="@dimen/margin_lls">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+                    <RelativeLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginEnd="@dimen/margin_llls">
+                        <RelativeLayout android:id="@id/picture_bg" android:background="@drawable/grey_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip">
+                            <LinearLayout android:orientation="vertical" android:id="@id/buttonAttachDriverPhotoFront" android:background="?selectableItemBackground" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                                <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/upper_string" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_s" android:layout_marginTop="@dimen/margin_xxxxs" android:layout_marginRight="@dimen/margin_s" android:layout_marginBottom="@dimen/margin_xxxxs" android:text="@string/start_car_shift_way_bill" android:drawablePadding="@dimen/margin_s" android:textAllCaps="true" app:drawableTopCompat="@drawable/shape" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                        <TextView android:textSize="16.0sp" android:textColor="@color/reg_del_img" android:id="@id/delete_btn" android:background="?selectableItemBackground" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_lls" android:layout_marginTop="@dimen/margin_s" android:layout_marginRight="@dimen/margin_lls" android:layout_marginBottom="@dimen/margin_s" android:text="@string/start_car_shift_way_bill_delete_img" android:drawablePadding="@dimen/margin_xxs" android:layout_below="@id/picture_bg" app:drawableLeftCompat="@drawable/ic_delete_black_24_px" app:drawableStartCompat="@drawable/ic_delete_black_24_px" />
+                    </RelativeLayout>
+                    <RelativeLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="@dimen/margin_llls">
+                        <RelativeLayout android:id="@id/picture_bg_2" android:background="@drawable/grey_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip">
+                            <LinearLayout android:orientation="vertical" android:id="@id/buttonAttachDriverPhotoRear" android:background="?selectableItemBackground" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                                <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/upper_string_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_s" android:layout_marginTop="@dimen/margin_xxxxs" android:layout_marginRight="@dimen/margin_s" android:layout_marginBottom="@dimen/margin_xxxxs" android:text="@string/start_car_shift_сar" android:drawablePadding="@dimen/margin_s" android:textAllCaps="true" app:drawableTopCompat="@drawable/shape" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                        <TextView android:textSize="16.0sp" android:textColor="@color/reg_del_img" android:id="@id/delete_btn_2" android:background="?selectableItemBackground" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_lls" android:layout_marginTop="@dimen/margin_s" android:layout_marginRight="@dimen/margin_lls" android:layout_marginBottom="@dimen/margin_xxs" android:text="@string/start_car_shift_сar_delete_img" android:drawablePadding="@dimen/margin_xxs" android:layout_below="@id/picture_bg_2" app:drawableLeftCompat="@drawable/ic_delete_black_24_px" app:drawableStartCompat="@drawable/ic_delete_black_24_px" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </ScrollView>
+            <LinearLayout android:orientation="horizontal" android:id="@id/wrapperNext" android:background="@drawable/next_button" android:layout_width="100.0dip" android:layout_height="fill_parent" android:layout_margin="3.0dip">
+                <TextView android:textSize="12.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/textButton" android:background="?selectableItemBackground" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/next_reg" android:textAllCaps="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:theme="@style/ElevationCompatTheme" android:background="@drawable/elevation_compat" android:layout_width="fill_parent" android:layout_height="4.0dip" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

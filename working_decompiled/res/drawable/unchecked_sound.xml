@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/settings_switch_shadow" />
+        </shape>
+    </item>
+    <item android:left="1.0dip" android:top="1.0dip" android:right="1.0dip" android:bottom="1.0dip">
+        <shape android:shape="oval">
+            <solid android:color="@color/hurry_cancel_btn" />
+            <size android:height="18.0dip" />
+            <size android:width="18.0dip" />
+        </shape>
+    </item>
+    <item android:left="2.0dip" android:top="2.0dip" android:right="2.0dip" android:bottom="2.0dip">
+        <bitmap android:src="@drawable/ic_music" />
+    </item>
+</layer-list>

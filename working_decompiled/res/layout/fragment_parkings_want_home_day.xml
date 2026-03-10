@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/parking_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/btn_wrapper" android:layout_alignParentTop="true" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/btn_wrapper" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false" android:layout_alignParentBottom="true">
+        <FrameLayout android:layout_width="0.0dip" android:layout_height="56.0dip" android:layout_marginLeft="4.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="2.0dip" android:layout_marginBottom="4.0dip" android:layout_weight="1.0" android:layout_marginStart="4.0dip" android:layout_marginEnd="2.0dip">
+            <TextView android:textSize="16.0dip" android:textColor="@color/want_home_color_text_btn_grey_light" android:gravity="center" android:id="@id/btn_drop" android:background="@drawable/want_home_bg_btn_grey_light" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/want_home_drop_btn" android:textAllCaps="true" android:fontFamily="sans-serif-medium" />
+        </FrameLayout>
+        <FrameLayout android:layout_width="0.0dip" android:layout_height="56.0dip" android:layout_marginLeft="2.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="4.0dip" android:layout_marginBottom="4.0dip" android:layout_weight="1.0" android:layout_marginStart="2.0dip" android:layout_marginEnd="4.0dip">
+            <TextView android:textSize="16.0dip" android:textColor="@color/want_home_color_text_btn_light" android:gravity="center" android:id="@id/btn_proceed" android:background="@drawable/want_home_bg_btn_light" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/want_home_proceed_btn" android:textAllCaps="true" android:fontFamily="sans-serif-medium" />
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>

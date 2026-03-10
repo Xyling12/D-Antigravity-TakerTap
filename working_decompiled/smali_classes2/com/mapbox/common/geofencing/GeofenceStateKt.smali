@@ -1,0 +1,27 @@
+.class public final Lcom/mapbox/common/geofencing/GeofenceStateKt;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# direct methods
+.method public static final synthetic geofenceState(Ls3/lsvcqaryex;)Lcom/mapbox/common/geofencing/GeofenceState;
+    .locals 1
+    .annotation build Lv0/khjnvckbwi;
+    .end annotation
+
+    const-string v0, "initializer"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lcom/mapbox/common/geofencing/GeofenceState$Builder;
+
+    invoke-direct {v0}, Lcom/mapbox/common/geofencing/GeofenceState$Builder;-><init>()V
+
+    invoke-interface {p0, v0}, Ls3/lsvcqaryex;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0}, Lcom/mapbox/common/geofencing/GeofenceState$Builder;->build()Lcom/mapbox/common/geofencing/GeofenceState;
+
+    move-result-object p0
+
+    return-object p0
+.end method

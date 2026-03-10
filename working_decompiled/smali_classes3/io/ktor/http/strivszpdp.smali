@@ -1,0 +1,400 @@
+.class public final Lio/ktor/http/strivszpdp;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nURLUtilsJvm.kt\nKotlin\n*S Kotlin\n*F\n+ 1 URLUtilsJvm.kt\nio/ktor/http/URLUtilsJvmKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,66:1\n1#2:67\n*E\n"
+.end annotation
+
+.annotation build Lkotlin/jvm/internal/qzbvjsuekv;
+    value = {
+        "SMAP\nURLUtilsJvm.kt\nKotlin\n*S Kotlin\n*F\n+ 1 URLUtilsJvm.kt\nio/ktor/http/URLUtilsJvmKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,66:1\n1#2:67\n*E\n"
+    }
+.end annotation
+
+
+# direct methods
+.method public static final feyxvdiekx(Lio/ktor/http/qzbvjsuekv;Ljava/net/URI;)Lio/ktor/http/qzbvjsuekv;
+    .locals 9
+    .param p0    # Lio/ktor/http/qzbvjsuekv;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .param p1    # Ljava/net/URI;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "uri"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/net/URI;->getScheme()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v1, Lio/ktor/http/klvawbfmro;->khjnvckbwi:Lio/ktor/http/klvawbfmro$qfzjddwuyn;
+
+    invoke-virtual {v1, v0}, Lio/ktor/http/klvawbfmro$qfzjddwuyn;->qfzjddwuyn(Ljava/lang/String;)Lio/ktor/http/klvawbfmro;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lio/ktor/http/qzbvjsuekv;->kedepleukr(Lio/ktor/http/klvawbfmro;)V
+
+    invoke-virtual {p0}, Lio/ktor/http/qzbvjsuekv;->thjjozpxyz()Lio/ktor/http/klvawbfmro;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lio/ktor/http/klvawbfmro;->ktvtxjqbtt()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lio/ktor/http/qzbvjsuekv;->cqwyelzfbm(I)V
+
+    :cond_0
+    invoke-virtual {p1}, Ljava/net/URI;->getPort()I
+
+    move-result v0
+
+    if-lez v0, :cond_1
+
+    invoke-virtual {p1}, Ljava/net/URI;->getPort()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lio/ktor/http/qzbvjsuekv;->cqwyelzfbm(I)V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p1}, Ljava/net/URI;->getScheme()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "http"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/erplbhbeyt;->nhdortzefg(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x50
+
+    invoke-virtual {p0, v0}, Lio/ktor/http/qzbvjsuekv;->cqwyelzfbm(I)V
+
+    goto :goto_0
+
+    :cond_2
+    const-string v1, "https"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/erplbhbeyt;->nhdortzefg(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const/16 v0, 0x1bb
+
+    invoke-virtual {p0, v0}, Lio/ktor/http/qzbvjsuekv;->cqwyelzfbm(I)V
+
+    :cond_3
+    :goto_0
+    invoke-virtual {p1}, Ljava/net/URI;->getRawUserInfo()Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_4
+
+    invoke-virtual {p1}, Ljava/net/URI;->getRawUserInfo()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v2, "uri.rawUserInfo"
+
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/erplbhbeyt;->thjjozpxyz(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_4
+
+    invoke-virtual {p1}, Ljava/net/URI;->getRawUserInfo()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3, v2}, Lkotlin/jvm/internal/erplbhbeyt;->thjjozpxyz(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, ":"
+
+    filled-new-array {v0}, [Ljava/lang/String;
+
+    move-result-object v4
+
+    const/4 v7, 0x6
+
+    const/4 v8, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    invoke-static/range {v3 .. v8}, Lkotlin/text/lohkmxcimj;->Z2(Ljava/lang/CharSequence;[Ljava/lang/String;ZIILjava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/collections/pednzybqgd;->F0(Ljava/util/List;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {p0, v2}, Lio/ktor/http/qzbvjsuekv;->opauvyugnb(Ljava/lang/String;)V
+
+    invoke-static {v0, v1}, Lkotlin/collections/pednzybqgd;->a1(Ljava/util/List;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lio/ktor/http/qzbvjsuekv;->vlnjtcdbbq(Ljava/lang/String;)V
+
+    :cond_4
+    invoke-virtual {p1}, Ljava/net/URI;->getHost()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_5
+
+    invoke-virtual {p0, v0}, Lio/ktor/http/qzbvjsuekv;->czxichccep(Ljava/lang/String;)V
+
+    :cond_5
+    invoke-virtual {p1}, Ljava/net/URI;->getRawPath()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v2, "uri.rawPath"
+
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/erplbhbeyt;->thjjozpxyz(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p0, v0}, Lio/ktor/http/URLBuilderKt;->jodmjjzdpr(Lio/ktor/http/qzbvjsuekv;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/net/URI;->getRawQuery()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_6
+
+    const/4 v0, 0x0
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Lio/ktor/http/yjsnmddfnr;->feyxvdiekx(IILjava/lang/Object;)Lio/ktor/http/jfjhscekir;
+
+    move-result-object v0
+
+    const/4 v7, 0x6
+
+    const/4 v8, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    invoke-static/range {v3 .. v8}, Lio/ktor/http/gsqtbaunhh;->ibzphkbtmt(Ljava/lang/String;IIZILjava/lang/Object;)Lio/ktor/http/fdbcgriwfo;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Lio/ktor/util/lrtruanqwg;->kgyfkythat(Lio/ktor/util/qzbvjsuekv;)V
+
+    invoke-virtual {p0, v0}, Lio/ktor/http/qzbvjsuekv;->ldyhhegomq(Lio/ktor/http/jfjhscekir;)V
+
+    :cond_6
+    invoke-virtual {p1}, Ljava/net/URI;->getQuery()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_7
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    invoke-virtual {p0, v1}, Lio/ktor/http/qzbvjsuekv;->jtuzwzphqf(Z)V
+
+    :cond_7
+    invoke-virtual {p1}, Ljava/net/URI;->getRawFragment()Ljava/lang/String;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_8
+
+    invoke-virtual {p0, p1}, Lio/ktor/http/qzbvjsuekv;->pednzybqgd(Ljava/lang/String;)V
+
+    :cond_8
+    return-object p0
+.end method
+
+.method public static final ibzphkbtmt(Lio/ktor/http/Url;)Ljava/net/URI;
+    .locals 1
+    .param p0    # Lio/ktor/http/Url;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Ljava/net/URI;
+
+    invoke-virtual {p0}, Lio/ktor/http/Url;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public static final khjnvckbwi(Lio/ktor/http/qzbvjsuekv;Ljava/net/URL;)Lio/ktor/http/qzbvjsuekv;
+    .locals 5
+    .param p0    # Lio/ktor/http/qzbvjsuekv;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .param p1    # Ljava/net/URL;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "url"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/net/URL;->getHost()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "url.host"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/erplbhbeyt;->thjjozpxyz(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x0
+
+    const/16 v3, 0x5f
+
+    const/4 v4, 0x0
+
+    invoke-static {v0, v3, v4, v1, v2}, Lkotlin/text/lohkmxcimj;->Z0(Ljava/lang/CharSequence;CZILjava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Ljava/net/URL;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "url.toString()"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/erplbhbeyt;->thjjozpxyz(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p0, p1}, Lio/ktor/http/URLParserKt;->ktvtxjqbtt(Lio/ktor/http/qzbvjsuekv;Ljava/lang/String;)Lio/ktor/http/qzbvjsuekv;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    invoke-virtual {p1}, Ljava/net/URL;->toURI()Ljava/net/URI;
+
+    move-result-object p1
+
+    const-string v0, "url.toURI()"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/erplbhbeyt;->thjjozpxyz(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p0, p1}, Lio/ktor/http/strivszpdp;->feyxvdiekx(Lio/ktor/http/qzbvjsuekv;Ljava/net/URI;)Lio/ktor/http/qzbvjsuekv;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final qfzjddwuyn(Ljava/net/URI;)Lio/ktor/http/Url;
+    .locals 13
+    .param p0    # Ljava/net/URI;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    const-string v0, "uri"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v1, Lio/ktor/http/qzbvjsuekv;
+
+    const/16 v11, 0x1ff
+
+    const/4 v12, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    invoke-direct/range {v1 .. v12}, Lio/ktor/http/qzbvjsuekv;-><init>(Lio/ktor/http/klvawbfmro;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/List;Lio/ktor/http/fdbcgriwfo;Ljava/lang/String;ZILkotlin/jvm/internal/pyxggrwgoy;)V
+
+    invoke-static {v1, p0}, Lio/ktor/http/strivszpdp;->feyxvdiekx(Lio/ktor/http/qzbvjsuekv;Ljava/net/URI;)Lio/ktor/http/qzbvjsuekv;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lio/ktor/http/qzbvjsuekv;->feyxvdiekx()Lio/ktor/http/Url;
+
+    move-result-object p0
+
+    return-object p0
+.end method

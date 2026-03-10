@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinator" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" app:contentInsetLeft="@dimen/toolbar_left" app:contentInsetStart="@dimen/toolbar_left" app:popupTheme="@style/ToolbarTheme" style="@style/HeaderBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/message_alert" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        <androidx.fragment.app.FragmentContainerView android:name="androidx.navigation.fragment.NavHostFragment" android:id="@id/nav_host_fragment" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" app:defaultNavHost="true" app:navGraph="@navigation/navigation_want_home" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

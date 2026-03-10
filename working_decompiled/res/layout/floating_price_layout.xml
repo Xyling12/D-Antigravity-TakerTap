@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/root_container" android:background="@drawable/price_floating" android:layout_width="94.0dip" android:layout_height="94.0dip">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_width="26.0dip" android:layout_height="26.0dip" android:layout_marginTop="12.0dip" android:src="@drawable/logotype" />
+        <androidx.appcompat.widget.AppCompatTextView android:textSize="24.0dip" android:textStyle="bold" android:textColor="@color/primary" android:gravity="center" android:id="@id/text_price" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="9.0dip" android:layout_marginTop="-1.0dip" android:layout_marginRight="9.0dip" android:singleLine="true" android:fontFamily="sans-serif" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-8.0dip" android:text="@string/floating_price_rub" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.soft373.taxi.ui.CustomTextView android:textSize="18.0sp" android:textColor="@color/inactive_btn_text" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_s" android:layout_toLeftOf="@id/status" android:layout_marginEnd="@dimen/margin_s" android:layout_toStartOf="@id/status" app:text_font="regular" />
+    <com.soft373.taxi.ui.CustomTextView android:textSize="14.0sp" android:textColor="@color/settings_desc" android:id="@id/desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/title" app:text_font="italic" />
+    <com.soft373.taxi.ui.CustomTextView android:textSize="12.0sp" android:id="@id/status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_alignParentRight="true" android:layout_alignParentEnd="true" app:text_font="regular" />
+</RelativeLayout>

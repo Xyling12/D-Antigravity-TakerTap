@@ -1,0 +1,24 @@
+.class public interface abstract annotation Lh3/tthmnequln;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
+
+
+# annotations
+.annotation runtime Lh3/nhdortzefg;
+.end annotation
+
+.annotation runtime Lj3/ibzphkbtmt;
+    value = {
+        .enum Ljava/lang/annotation/ElementType;->PARAMETER:Ljava/lang/annotation/ElementType;
+    }
+.end annotation
+
+.annotation runtime Ljava/lang/annotation/Documented;
+.end annotation
+
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation

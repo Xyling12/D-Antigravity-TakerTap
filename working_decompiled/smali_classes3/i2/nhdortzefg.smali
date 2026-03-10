@@ -1,0 +1,139 @@
+.class public Li2/nhdortzefg;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static feyxvdiekx(Ljava/util/List;Ljava/util/List;)Z
+    .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "list1",
+            "list2"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/List<",
+            "TT;>;",
+            "Ljava/util/List<",
+            "TT;>;)Z"
+        }
+    .end annotation
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p0, :cond_1
+
+    if-eqz p1, :cond_3
+
+    :cond_1
+    if-nez p0, :cond_2
+
+    if-nez p1, :cond_3
+
+    :cond_2
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-eq v2, v3, :cond_4
+
+    :cond_3
+    return v1
+
+    :cond_4
+    move v2, v1
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_6
+
+    invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Li2/nhdortzefg;->qfzjddwuyn(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_5
+
+    return v1
+
+    :cond_5
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_6
+    return v0
+.end method
+
+.method public static qfzjddwuyn(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "o1",
+            "o2"
+        }
+    .end annotation
+
+    if-nez p0, :cond_1
+
+    if-nez p1, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method

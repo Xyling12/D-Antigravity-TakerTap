@@ -1,0 +1,149 @@
+.class public final Landroidx/privacysandbox/ads/adservices/common/lohkmxcimj;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation build Landroid/annotation/SuppressLint;
+    value = {
+        "ClassVerificationFailure"
+    }
+.end annotation
+
+
+# instance fields
+.field private final qfzjddwuyn:Ljava/lang/String;
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+
+    const-string v0, "identifier"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Landroidx/privacysandbox/ads/adservices/common/lohkmxcimj;->qfzjddwuyn:Ljava/lang/String;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Ld6/lsvcqaryex;
+        .end annotation
+    .end param
+
+    if-ne p0, p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    instance-of v0, p1, Landroidx/privacysandbox/ads/adservices/common/lohkmxcimj;
+
+    if-nez v0, :cond_1
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_1
+    iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/common/lohkmxcimj;->qfzjddwuyn:Ljava/lang/String;
+
+    check-cast p1, Landroidx/privacysandbox/ads/adservices/common/lohkmxcimj;
+
+    iget-object p1, p1, Landroidx/privacysandbox/ads/adservices/common/lohkmxcimj;->qfzjddwuyn:Ljava/lang/String;
+
+    invoke-static {v0, p1}, Lkotlin/jvm/internal/erplbhbeyt;->nhdortzefg(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final feyxvdiekx()Ljava/lang/String;
+    .locals 1
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/common/lohkmxcimj;->qfzjddwuyn:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/common/lohkmxcimj;->qfzjddwuyn:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final qfzjddwuyn()Landroid/adservices/common/AdTechIdentifier;
+    .locals 2
+    .annotation build Landroidx/annotation/RestrictTo;
+        value = {
+            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
+        }
+    .end annotation
+
+    .annotation build Landroidx/annotation/strivszpdp$qfzjddwuyn;
+        value = {
+            .subannotation Landroidx/annotation/strivszpdp;
+                extension = 0xf4240
+                version = 0x4
+            .end subannotation,
+            .subannotation Landroidx/annotation/strivszpdp;
+                extension = 0x1f
+                version = 0x9
+            .end subannotation
+        }
+    .end annotation
+
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/common/lohkmxcimj;->qfzjddwuyn:Ljava/lang/String;
+
+    invoke-static {v0}, Landroidx/privacysandbox/ads/adservices/common/thjjozpxyz;->qfzjddwuyn(Ljava/lang/String;)Landroid/adservices/common/AdTechIdentifier;
+
+    move-result-object v0
+
+    const-string v1, "fromString(identifier)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/erplbhbeyt;->thjjozpxyz(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/common/lohkmxcimj;->qfzjddwuyn:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method

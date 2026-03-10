@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinator" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" app:contentInsetLeft="@dimen/toolbar_left" app:contentInsetStart="@dimen/toolbar_left" app:popupTheme="@style/ToolbarTheme" style="@style/HeaderBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/wrapper" android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ListView android:id="@id/parkingsLayout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="@color/inactive_btn" android:dividerHeight="2.0dip" android:fadeScrollbars="false" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="76.0dip" android:baselineAligned="false">
+                <LinearLayout android:orientation="horizontal" android:id="@id/wrapperWant" android:background="@drawable/next_button" android:layout_width="0.0dip" android:layout_height="60.0dip" android:layout_margin="2.0dip" android:layout_weight="1.0">
+                    <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/okButton" android:background="?selectableItemBackground" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/next_reg" android:textAllCaps="true" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/wrapperDrop" android:background="@drawable/grey_button" android:layout_width="0.0dip" android:layout_height="60.0dip" android:layout_margin="2.0dip" android:layout_weight="1.0">
+                    <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/cancelButton" android:background="?selectableItemBackground" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/next_reg" android:textAllCaps="true" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:theme="@style/ElevationCompatTheme" android:background="@drawable/elevation_compat" android:layout_width="fill_parent" android:layout_height="4.0dip" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

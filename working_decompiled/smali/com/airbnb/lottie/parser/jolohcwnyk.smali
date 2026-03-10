@@ -1,0 +1,143 @@
+.class Lcom/airbnb/lottie/parser/jolohcwnyk;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field private static final qfzjddwuyn:Lcom/airbnb/lottie/parser/moshi/JsonReader$qfzjddwuyn;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 5
+
+    const-string v0, "r"
+
+    const-string v1, "hd"
+
+    const-string v2, "nm"
+
+    const-string v3, "p"
+
+    const-string v4, "s"
+
+    filled-new-array {v2, v3, v4, v0, v1}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/airbnb/lottie/parser/moshi/JsonReader$qfzjddwuyn;->qfzjddwuyn([Ljava/lang/String;)Lcom/airbnb/lottie/parser/moshi/JsonReader$qfzjddwuyn;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/airbnb/lottie/parser/jolohcwnyk;->qfzjddwuyn:Lcom/airbnb/lottie/parser/moshi/JsonReader$qfzjddwuyn;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method static qfzjddwuyn(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/tthmnequln;)Lcom/airbnb/lottie/model/content/nhdortzefg;
+    .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    move-object v3, v0
+
+    move-object v4, v3
+
+    move-object v5, v4
+
+    move-object v6, v5
+
+    move v7, v1
+
+    :goto_0
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->extxjewlhp()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    sget-object v0, Lcom/airbnb/lottie/parser/jolohcwnyk;->qfzjddwuyn:Lcom/airbnb/lottie/parser/moshi/JsonReader$qfzjddwuyn;
+
+    invoke-virtual {p0, v0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->tgyvlqjbcn(Lcom/airbnb/lottie/parser/moshi/JsonReader$qfzjddwuyn;)I
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_3
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x4
+
+    if-eq v0, v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->jolohcwnyk()V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->kgyfkythat()Z
+
+    move-result v7
+
+    goto :goto_0
+
+    :cond_1
+    invoke-static {p0, p1}, Lcom/airbnb/lottie/parser/ibzphkbtmt;->qhoahqxrkc(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/tthmnequln;)Lcom/airbnb/lottie/model/animatable/feyxvdiekx;
+
+    move-result-object v6
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {p0, p1}, Lcom/airbnb/lottie/parser/ibzphkbtmt;->drkbbjxjkt(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/tthmnequln;)Lcom/airbnb/lottie/model/animatable/extxjewlhp;
+
+    move-result-object v5
+
+    goto :goto_0
+
+    :cond_3
+    invoke-static {p0, p1}, Lcom/airbnb/lottie/parser/qfzjddwuyn;->feyxvdiekx(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/tthmnequln;)Lcom/airbnb/lottie/model/animatable/thjjozpxyz;
+
+    move-result-object v4
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->lohkmxcimj()Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_0
+
+    :cond_5
+    new-instance v2, Lcom/airbnb/lottie/model/content/nhdortzefg;
+
+    invoke-direct/range {v2 .. v7}, Lcom/airbnb/lottie/model/content/nhdortzefg;-><init>(Ljava/lang/String;Lcom/airbnb/lottie/model/animatable/thjjozpxyz;Lcom/airbnb/lottie/model/animatable/thjjozpxyz;Lcom/airbnb/lottie/model/animatable/feyxvdiekx;Z)V
+
+    return-object v2
+.end method

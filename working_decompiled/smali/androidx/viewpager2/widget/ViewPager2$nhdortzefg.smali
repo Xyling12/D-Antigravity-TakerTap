@@ -1,0 +1,83 @@
+.class abstract Landroidx/viewpager2/widget/ViewPager2$nhdortzefg;
+.super Landroidx/recyclerview/widget/RecyclerView$drkbbjxjkt;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/viewpager2/widget/ViewPager2;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x40a
+    name = "nhdortzefg"
+.end annotation
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$drkbbjxjkt;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Landroidx/viewpager2/widget/ViewPager2$qfzjddwuyn;)V
+    .locals 0
+
+    .line 2
+    invoke-direct {p0}, Landroidx/viewpager2/widget/ViewPager2$nhdortzefg;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final extxjewlhp(II)V
+    .locals 0
+
+    invoke-virtual {p0}, Landroidx/viewpager2/widget/ViewPager2$nhdortzefg;->qfzjddwuyn()V
+
+    return-void
+.end method
+
+.method public final feyxvdiekx(II)V
+    .locals 0
+
+    invoke-virtual {p0}, Landroidx/viewpager2/widget/ViewPager2$nhdortzefg;->qfzjddwuyn()V
+
+    return-void
+.end method
+
+.method public final ibzphkbtmt(II)V
+    .locals 0
+
+    invoke-virtual {p0}, Landroidx/viewpager2/widget/ViewPager2$nhdortzefg;->qfzjddwuyn()V
+
+    return-void
+.end method
+
+.method public final khjnvckbwi(IILjava/lang/Object;)V
+    .locals 0
+    .param p3    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/gsqtbaunhh;
+        .end annotation
+    .end param
+
+    invoke-virtual {p0}, Landroidx/viewpager2/widget/ViewPager2$nhdortzefg;->qfzjddwuyn()V
+
+    return-void
+.end method
+
+.method public abstract qfzjddwuyn()V
+.end method
+
+.method public final qhoahqxrkc(III)V
+    .locals 0
+
+    invoke-virtual {p0}, Landroidx/viewpager2/widget/ViewPager2$nhdortzefg;->qfzjddwuyn()V
+
+    return-void
+.end method

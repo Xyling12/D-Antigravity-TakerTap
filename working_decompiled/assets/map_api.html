@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+
+    <title></title>
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=basic" data-id="dgLoader"></script>
+
+    <style type="text/css">
+        html {
+        margin: 0;
+        padding: 0;
+        height: 100%
+        }
+
+        body {
+        margin: 0;
+        padding: 0;
+        height: 100%
+        }
+
+        #map {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        }
+
+        .marker._pin:before {
+        position: absolute;
+        margin: -8px 0 0 -8px;
+        width: 16px;
+        height: 16px;
+        content: '';
+        background-size: cover;
+        }
+
+        .marker._hidden {
+        display: none;
+        visibility: hidden;
+        }
+
+        .marker._outOfViewPort {
+        display: none;
+        visibility: hidden;
+        }
+
+        .marker._unselectedFilial:before {
+        background: url('file:///android_asset/images/point.svg');
+        }
+
+        .marker2 {
+        background: url('file:///res/drawables/ic_man_copy.png');
+        }
+
+        .marker._unselectedFilialMultiple:before {
+        background: url('file:///android_asset/images/point_reviews_multiple.svg');
+        }
+
+        .marker._pointActive:before {
+        background: url('file:///android_asset/images/point_active.svg');
+        }
+
+        .marker._pointActiveMultiple:before {
+        background: url('file:///android_asset/images/point_active_multiple.svg');
+        }
+
+        .marker._userLocationMarker:before {
+        position: absolute;
+        margin: -12px 0 0 -12px;
+        width: 24px;
+        height: 24px;
+        background: url('file:///android_asset/images/point_landmark.svg');
+        content: '';
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="map"></div>
+<script>
+var map;
+var markerGroup;
+var userLocationMarker;
+var userLocationMarkerZIndexOffset = 9999999;
+var isInit = false;
+var userDivIcon;
+
+DG.then(function() {
+    return DG.plugin('generalize.js');
+}).then(function(){
+    return DG.plugin('quadtree.js');
+});
+
+function initMap(projectLat, projectLon, currentZoom){
+			DG.then(function() {
+                map = DG.map('map', {
+                    center : [projectLat, projectLon],
+                    zoom : currentZoom,
+                    minZoom : 7,
+                    zoomControl : false,
+                    fullscreenControl : false
+                });
+                markerGroup = L.markerGeneralizeGroup();
+                markerGroup.addTo(map);
+                isInit = true;
+            });
+}
+
+function hideCopyright() {
+  var cols = document.querySelector('.dg-attribution__copyright');
+  var links = cols.querySelectorAll('a');
+
+  for (var i = 0 ; i < links.length; i++) {
+    links[i].addEventListener('click', urlParcer);
+  }
+}
+
+function urlParcer(event){
+    event.preventDefault();
+    event.stopPropagation();
+    android_callback.clickCopyright(event.currentTarget.getAttribute('href'));
+}
+
+function setMarkersAndAvatar(markers) {
+    if(isInit) {
+        this.removeMarkers();
+    };
+    DG.then(function() {
+        if (!isInit) {
+            map = DG.map('map', {
+                    center : [54.193,37.6178],
+                    zoom : 17,
+                    minZoom : 7,
+                    zoomControl : false,
+                    touchZoom : true,
+                    fullscreenControl : false
+                });
+                markerGroup = L.markerGeneralizeGroup();
+                markerGroup.addTo(map);
+                isInit = true;
+        }
+        var i, markerArr = [];
+        for ( i = 0; i < markers.length; i++) {
+            var markerIcon = DG.icon({
+                iconUrl: markers[i][3]
+            });
+            var marker = L.marker([markers[i][0], markers[i][1]], {
+                icon : markerIcon,
+                filialIDs : markers[i][2]
+            }).on('click', didTouchMarker);
+            markerArr.push(marker);
+        }
+
+        markerGroup.addLayers(markerArr).once('invalidationFinish', function() {
+            var bounds = markerGroup.getBounds();
+            var latDelta = bounds.getNorthEast().lat - bounds.getSouthWest().lat;
+            var lngDelta = bounds.getNorthEast().lng - bounds.getSouthWest().lng;
+            var newBounds = DG.latLngBounds(DG.latLng(bounds.getSouthWest().lat - 0.1 * latDelta, bounds.getSouthWest().lng - 0.1 * latDelta), DG.latLng(bounds.getNorthEast().lat + 0.1 * latDelta, bounds.getNorthEast().lng + 0.1 * lngDelta));
+            map.fitBounds(newBounds);
+            android_callback.setZoomLevel(map.getZoom());
+        });
+        this.hideCopyright();
+    });
+}
+
+function moveTo(lat,lon,zoom){
+    if(!isInit) return false;
+    DG.then(function(){
+    var latlng = DG.latLng(lat, lon);
+    map.setView(latlng,zoom);
+    android_callback.setZoomLevel(zoom);
+    //map.invalidateSize();
+    });
+}
+
+function moveTo(lat,lon){
+    if(!isInit) return false;
+    DG.then(function(){
+    var latlng = DG.latLng(lat, lon);
+    var zoom = map.getZoom();
+    map.setView(latlng,zoom);
+    android_callback.setZoomLevel(zoom);
+    //map.invalidateSize();
+    });
+}
+
+function spanZoom(coordinates){
+    if(!isInit) return false;
+    DG.then(function(){
+        map.fitBounds(coordinates);
+        android_callback.setZoomLevel(map.getZoom());
+    });
+}
+
+function zoomIn(zoom){
+    if(!isInit) return false;
+    DG.then(function(){
+        map.zoomIn(zoom, false);
+        android_callback.setZoomLevel(map.getZoom());
+    });
+}
+
+function zoomOut(zoom){
+    if(!isInit) return false;
+    DG.then(function(){
+        map.zoomOut(zoom, false);
+        android_callback.setZoomLevel(map.getZoom());
+    });
+}
+
+function setZoom(zoom){
+    if(!isInit) return false;
+    DG.then(function(){
+        map.setZoom(zoom, false);
+        android_callback.setZoomLevel(zoom);
+    });
+}
+
+function setMultiTouch(enable){
+    if(!isInit) return false;
+    DG.then(function(){
+        map.touchZoom(enable);
+    });
+}
+
+function removeMarkers() {
+    DG.then(function() {
+        markerGroup.clearLayers();
+        markerGroup._selectedMarker = undefined;
+    });
+}
+function selectMarker(filialID) {
+    DG.then(function () {
+        var markerToSelect;
+        markerGroup._otherMarkers.some(function (marker) {
+           marker.options.filialIDs.some(function (tempFilialID) {
+               if (tempFilialID == filialID) {
+                   markerToSelect = marker;
+                   return true;
+               }
+           });
+           return markerToSelect !== undefined;
+        });
+        if (markerToSelect !== undefined) {
+            if (markerToSelect.options.filialIDs.length > 1) {
+                L.DomUtil.addClass(markerToSelect._icon, '_pointActiveMultiple');
+            } else {
+                L.DomUtil.addClass(markerToSelect._icon, '_pointActive');
+            }
+            markerGroup._selectedMarker = markerToSelect;
+         //  android_callback.touchMarker(""+markerToSelect.options.filialIDs.toString(),markerToSelect.getLatLng().lat,markerToSelect.getLatLng().lng,markerGroup._selectedMarker !== undefined ? 1 : 0);
+           markerGroup._invalidateMarkers();
+        }
+     });
+ }
+
+function didTouchMarker(e) {
+    DG.then(function() {
+        var marker = e.target;
+        android_callback.touchMarker(""+marker.options.filialIDs.toString(),marker.getLatLng().lat,marker.getLatLng().lng);
+        markerGroup._invalidateMarkers();
+    });
+}
+
+</script>
+</body>
+</html>

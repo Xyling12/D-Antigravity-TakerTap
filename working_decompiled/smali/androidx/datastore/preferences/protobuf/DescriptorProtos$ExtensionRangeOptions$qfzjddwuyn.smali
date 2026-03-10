@@ -1,0 +1,809 @@
+.class public final Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+.super Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ibzphkbtmt;
+.source "SourceFile"
+
+# interfaces
+.implements Landroidx/datastore/preferences/protobuf/DescriptorProtos$lsvcqaryex;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "qfzjddwuyn"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ibzphkbtmt<",
+        "Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;",
+        "Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;",
+        ">;",
+        "Landroidx/datastore/preferences/protobuf/DescriptorProtos$lsvcqaryex;"
+    }
+.end annotation
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 1
+
+    .line 2
+    invoke-static {}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->y6()Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ibzphkbtmt;-><init>(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$qhoahqxrkc;)V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/DescriptorProtos$qfzjddwuyn;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public B3()Z
+    .locals 1
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->B3()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public K5(Ljava/lang/Iterable;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "values"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;",
+            ">;)",
+            "Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->I6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;Ljava/lang/Iterable;)V
+
+    return-object p0
+.end method
+
+.method public L5(Ljava/lang/Iterable;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "values"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Landroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;",
+            ">;)",
+            "Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->C6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;Ljava/lang/Iterable;)V
+
+    return-object p0
+.end method
+
+.method public M5(ILandroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx$qfzjddwuyn;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "index",
+            "builderForValue"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {p2}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->o5()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    move-result-object p2
+
+    check-cast p2, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;
+
+    invoke-static {v0, p1, p2}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->H6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;ILandroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;)V
+
+    return-object p0
+.end method
+
+.method public N5(ILandroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "index",
+            "value"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1, p2}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->H6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;ILandroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;)V
+
+    return-object p0
+.end method
+
+.method public O5(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx$qfzjddwuyn;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "builderForValue"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->o5()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    move-result-object p1
+
+    check-cast p1, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;
+
+    invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->G6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;)V
+
+    return-object p0
+.end method
+
+.method public P5(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->G6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;)V
+
+    return-object p0
+.end method
+
+.method public Q5(ILandroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda$qfzjddwuyn;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "index",
+            "builderForValue"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {p2}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->o5()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    move-result-object p2
+
+    check-cast p2, Landroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;
+
+    invoke-static {v0, p1, p2}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->B6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;ILandroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;)V
+
+    return-object p0
+.end method
+
+.method public R5(ILandroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "index",
+            "value"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1, p2}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->B6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;ILandroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;)V
+
+    return-object p0
+.end method
+
+.method public S5(Landroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda$qfzjddwuyn;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "builderForValue"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->o5()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    move-result-object p1
+
+    check-cast p1, Landroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;
+
+    invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->A6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;Landroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;)V
+
+    return-object p0
+.end method
+
+.method public T5(Landroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->A6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;Landroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;)V
+
+    return-object p0
+.end method
+
+.method public U5()Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->J6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;)V
+
+    return-object p0
+.end method
+
+.method public V5()Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->N6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;)V
+
+    return-object p0
+.end method
+
+.method public W5()Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->D6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;)V
+
+    return-object p0
+.end method
+
+.method public X5()Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->P6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;)V
+
+    return-object p0
+.end method
+
+.method public Y5(Landroidx/datastore/preferences/protobuf/DescriptorProtos$FeatureSet;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->M6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;Landroidx/datastore/preferences/protobuf/DescriptorProtos$FeatureSet;)V
+
+    return-object p0
+.end method
+
+.method public Z5(I)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "index"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->K6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;I)V
+
+    return-object p0
+.end method
+
+.method public a1()I
+    .locals 1
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->a1()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public a6(I)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "index"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->E6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;I)V
+
+    return-object p0
+.end method
+
+.method public b6(ILandroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx$qfzjddwuyn;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "index",
+            "builderForValue"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {p2}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->o5()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    move-result-object p2
+
+    check-cast p2, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;
+
+    invoke-static {v0, p1, p2}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->F6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;ILandroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;)V
+
+    return-object p0
+.end method
+
+.method public c6(ILandroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "index",
+            "value"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1, p2}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->F6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;ILandroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;)V
+
+    return-object p0
+.end method
+
+.method public d6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$FeatureSet$qfzjddwuyn;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "builderForValue"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->o5()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    move-result-object p1
+
+    check-cast p1, Landroidx/datastore/preferences/protobuf/DescriptorProtos$FeatureSet;
+
+    invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->L6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;Landroidx/datastore/preferences/protobuf/DescriptorProtos$FeatureSet;)V
+
+    return-object p0
+.end method
+
+.method public drkbbjxjkt()I
+    .locals 1
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->drkbbjxjkt()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public e6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$FeatureSet;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->L6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;Landroidx/datastore/preferences/protobuf/DescriptorProtos$FeatureSet;)V
+
+    return-object p0
+.end method
+
+.method public f6(ILandroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda$qfzjddwuyn;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "index",
+            "builderForValue"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {p2}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->o5()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    move-result-object p2
+
+    check-cast p2, Landroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;
+
+    invoke-static {v0, p1, p2}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->z6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;ILandroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;)V
+
+    return-object p0
+.end method
+
+.method public g6(ILandroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "index",
+            "value"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1, p2}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->z6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;ILandroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;)V
+
+    return-object p0
+.end method
+
+.method public h6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$VerificationState;)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$qfzjddwuyn;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->s5()V
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->O6(Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$VerificationState;)V
+
+    return-object p0
+.end method
+
+.method public ibzphkbtmt()Z
+    .locals 1
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->ibzphkbtmt()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public kgyfkythat(I)Landroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "index"
+        }
+    .end annotation
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->kgyfkythat(I)Landroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public khjnvckbwi()Landroidx/datastore/preferences/protobuf/DescriptorProtos$FeatureSet;
+    .locals 1
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->khjnvckbwi()Landroidx/datastore/preferences/protobuf/DescriptorProtos$FeatureSet;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public m1()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->m1()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public nhdortzefg()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Landroidx/datastore/preferences/protobuf/DescriptorProtos$nnapbkpnda;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->nhdortzefg()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public v1(I)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "index"
+        }
+    .end annotation
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {v0, p1}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->v1(I)Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$feyxvdiekx;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public v2()Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$VerificationState;
+    .locals 1
+
+    iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$feyxvdiekx;->xglnwpaccw:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
+
+    check-cast v0, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;
+
+    invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions;->v2()Landroidx/datastore/preferences/protobuf/DescriptorProtos$ExtensionRangeOptions$VerificationState;
+
+    move-result-object v0
+
+    return-object v0
+.end method

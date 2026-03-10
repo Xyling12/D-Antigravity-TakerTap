@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinator" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" app:contentInsetLeft="@dimen/toolbar_left" app:contentInsetStart="@dimen/toolbar_left" app:popupTheme="@style/ToolbarTheme" style="@style/HeaderBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/wrapper" android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fadeScrollbars="false">
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_s" android:layout_marginRight="@dimen/margin_s">
+                        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:gravity="start" android:id="@id/textView" android:paddingTop="@dimen/margin_xs" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/registration_start_text_new" />
+                        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:gravity="start" android:id="@id/textPassport" android:paddingTop="@dimen/margin_xs" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/registration_start_passport" android:drawableLeft="@drawable/icon_pass" android:drawablePadding="@dimen/margin_xxs" android:drawableStart="@drawable/icon_pass" />
+                        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:gravity="start" android:id="@id/textLicense" android:paddingTop="@dimen/margin_s" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/registration_start_license" android:drawableLeft="@drawable/icon_driver" android:drawablePadding="@dimen/margin_xxs" android:drawableStart="@drawable/icon_driver" />
+                        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:gravity="start" android:id="@id/textVehicle" android:paddingTop="@dimen/margin_s" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/registration_start_vehicle" android:drawableLeft="@drawable/icon_tc" android:drawablePadding="@dimen/margin_xxs" android:drawableStart="@drawable/icon_tc" />
+                        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:gravity="start" android:id="@id/textTaxi" android:paddingTop="@dimen/margin_s" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/registration_start_taxi" android:drawableLeft="@drawable/icon_check" android:drawablePadding="@dimen/margin_xxs" android:drawableStart="@drawable/icon_check" />
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/wrapperNext" android:background="@drawable/green_button" android:layout_width="fill_parent" android:layout_height="72.0dip" android:layout_margin="3.0dip">
+                <TextView android:textSize="20.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/textButton" android:background="?selectableItemBackground" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/next_reg" android:textAllCaps="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:theme="@style/ElevationCompatTheme" android:background="@drawable/elevation_compat" android:layout_width="fill_parent" android:layout_height="4.0dip" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

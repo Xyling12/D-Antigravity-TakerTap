@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinator" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" app:contentInsetLeft="@dimen/toolbar_left" app:contentInsetStart="@dimen/toolbar_left" app:popupTheme="@style/ToolbarTheme" style="@style/HeaderBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/wrapper" android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <com.soft373.taxi.ui.CustomEditText android:theme="@style/MyEditTextTheme" android:textSize="20.0sp" android:textColor="@color/et_text" android:textColorHint="@color/et_hint" android:id="@id/etPhone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_s" android:layout_marginTop="@dimen/margin_s" android:layout_marginRight="@dimen/margin_s" android:hint="@string/restore_phone" android:maxLines="1" android:singleLine="true" android:maxLength="@integer/fieldLengthPhone" android:inputType="phone" android:imeOptions="flagNoExtractUi" app:edit_text_font="regular" />
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_s" android:layout_marginTop="@dimen/margin_sl" android:layout_marginRight="@dimen/margin_s">
+                        <TextView android:theme="@style/MyEditTextThemeF" android:textSize="20.0sp" android:textColor="@color/et_text" android:textColorHint="@color/et_hint" android:id="@id/cityIdEdit" android:background="?editTextBackground" android:nextFocusDown="@id/callidEdit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/Сity_number_restore" android:maxLines="1" android:singleLine="true" />
+                        <ProgressBar android:id="@id/city_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_alignParentEnd="true" style="?android:progressBarStyleSmall" />
+                        <androidx.appcompat.widget.AppCompatImageView android:id="@id/city_ready" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_alignParentEnd="true" app:srcCompat="@drawable/ic_arrown_right_black_restore_w" />
+                    </RelativeLayout>
+                    <TextView android:textSize="16.0sp" android:textColor="@color/et_text" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:text="@string/restore_note" android:layout_marginHorizontal="16.0dip" />
+                </LinearLayout>
+            </ScrollView>
+            <LinearLayout android:orientation="horizontal" android:id="@id/wrapperNext" android:background="@drawable/next_button_restore_dark" android:layout_width="fill_parent" android:layout_height="72.0dip" android:layout_margin="3.0dip">
+                <TextView android:textSize="20.0sp" android:textColor="@color/restore_dark" android:gravity="center" android:layout_gravity="center" android:id="@id/textButton" android:background="?selectableItemBackground" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/restore_action" android:textAllCaps="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:theme="@style/ElevationCompatTheme" android:background="@drawable/elevation_compat" android:layout_width="fill_parent" android:layout_height="4.0dip" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

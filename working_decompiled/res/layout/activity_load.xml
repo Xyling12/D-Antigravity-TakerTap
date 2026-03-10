@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="bottom" android:orientation="vertical" android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.soft373.taxi.ui.CustomTextView android:textColor="@color/white" android:gravity="center" android:id="@id/progressDescription" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Application_is_started" app:text_font="regular" />
+    <ProgressBar android:id="@id/progressBar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+</LinearLayout>

@@ -1,0 +1,155 @@
+.class Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt$qfzjddwuyn;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/gms/tasks/tthmnequln;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt;->feyxvdiekx(Ljava/lang/Boolean;)Lcom/google/android/gms/tasks/ktvtxjqbtt;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/tasks/tthmnequln<",
+        "Lcom/google/firebase/crashlytics/internal/settings/ibzphkbtmt;",
+        "Ljava/lang/Void;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field final synthetic qfzjddwuyn:Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt;
+
+
+# direct methods
+.method constructor <init>(Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt$qfzjddwuyn;->qfzjddwuyn:Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public feyxvdiekx(Lcom/google/firebase/crashlytics/internal/settings/ibzphkbtmt;)Lcom/google/android/gms/tasks/ktvtxjqbtt;
+    .locals 2
+    .param p1    # Lcom/google/firebase/crashlytics/internal/settings/ibzphkbtmt;
+        .annotation build Landroidx/annotation/gsqtbaunhh;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/yjsnmddfnr;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/firebase/crashlytics/internal/settings/ibzphkbtmt;",
+            ")",
+            "Lcom/google/android/gms/tasks/ktvtxjqbtt<",
+            "Ljava/lang/Void;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_0
+
+    invoke-static {}, Lcom/google/firebase/crashlytics/internal/nhdortzefg;->extxjewlhp()Lcom/google/firebase/crashlytics/internal/nhdortzefg;
+
+    move-result-object p1
+
+    const-string v1, "Received null app settings at app startup. Cannot send cached reports"
+
+    invoke-virtual {p1, v1}, Lcom/google/firebase/crashlytics/internal/nhdortzefg;->rmnxkaltsn(Ljava/lang/String;)V
+
+    invoke-static {v0}, Lcom/google/android/gms/tasks/bveuzccgjl;->nhdortzefg(Ljava/lang/Object;)Lcom/google/android/gms/tasks/ktvtxjqbtt;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    iget-object p1, p0, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt$qfzjddwuyn;->qfzjddwuyn:Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt;
+
+    iget-object p1, p1, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt;->feyxvdiekx:Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj;
+
+    invoke-static {p1}, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj;->lsvcqaryex(Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj;)Lcom/google/android/gms/tasks/ktvtxjqbtt;
+
+    iget-object p1, p0, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt$qfzjddwuyn;->qfzjddwuyn:Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt;
+
+    iget-object p1, p1, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt;->feyxvdiekx:Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj;
+
+    invoke-static {p1}, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj;->nhdortzefg(Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj;)Lcom/google/firebase/crashlytics/internal/common/pgglzjfpqi;
+
+    move-result-object p1
+
+    iget-object v1, p0, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt$qfzjddwuyn;->qfzjddwuyn:Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt;
+
+    iget-object v1, v1, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt;->feyxvdiekx:Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj;
+
+    invoke-static {v1}, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj;->ktvtxjqbtt(Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj;)Lcom/google/firebase/crashlytics/internal/concurrency/CrashlyticsWorkers;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lcom/google/firebase/crashlytics/internal/concurrency/CrashlyticsWorkers;->qfzjddwuyn:Lcom/google/firebase/crashlytics/internal/concurrency/tthmnequln;
+
+    invoke-virtual {p1, v1}, Lcom/google/firebase/crashlytics/internal/common/pgglzjfpqi;->bdweufyeak(Ljava/util/concurrent/Executor;)Lcom/google/android/gms/tasks/ktvtxjqbtt;
+
+    iget-object p1, p0, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt$qfzjddwuyn;->qfzjddwuyn:Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt;
+
+    iget-object p1, p1, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt;->feyxvdiekx:Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj;
+
+    iget-object p1, p1, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj;->pednzybqgd:Lcom/google/android/gms/tasks/lsvcqaryex;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/lsvcqaryex;->qhoahqxrkc(Ljava/lang/Object;)Z
+
+    invoke-static {v0}, Lcom/google/android/gms/tasks/bveuzccgjl;->nhdortzefg(Ljava/lang/Object;)Lcom/google/android/gms/tasks/ktvtxjqbtt;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic qfzjddwuyn(Ljava/lang/Object;)Lcom/google/android/gms/tasks/ktvtxjqbtt;
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/gsqtbaunhh;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/yjsnmddfnr;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    check-cast p1, Lcom/google/firebase/crashlytics/internal/settings/ibzphkbtmt;
+
+    invoke-virtual {p0, p1}, Lcom/google/firebase/crashlytics/internal/common/lohkmxcimj$ibzphkbtmt$qfzjddwuyn;->feyxvdiekx(Lcom/google/firebase/crashlytics/internal/settings/ibzphkbtmt;)Lcom/google/android/gms/tasks/ktvtxjqbtt;
+
+    move-result-object p1
+
+    return-object p1
+.end method

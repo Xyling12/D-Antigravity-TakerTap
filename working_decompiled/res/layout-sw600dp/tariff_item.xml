@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/bg_wrapper" android:background="@drawable/menu_tariff_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="4.0dip">
+        <TextView android:textSize="24.0sp" android:textColor="@color/tariff_name" android:id="@id/name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="20.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dip">
+            <TextView android:textSize="16.0sp" android:textColor="@color/tariff_option" android:id="@id/pickup" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="20.0dip" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/tariff_option" android:id="@id/stay" android:layout_width="170.0dip" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginRight="20.0dip" android:layout_marginEnd="20.0dip" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/tariff_option" android:id="@id/ride" android:layout_width="180.0dip" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginRight="20.0dip" android:layout_marginEnd="20.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,134 @@
+.class final Lio/ktor/client/plugins/websocket/BuildersKt$wss$8;
+.super Lkotlin/jvm/internal/Lambda;
+.source "SourceFile"
+
+# interfaces
+.implements Ls3/lsvcqaryex;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lio/ktor/client/plugins/websocket/BuildersKt;->ewnfwzyokr(Lio/ktor/client/HttpClient;Lio/ktor/http/jolohcwnyk;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ls3/lsvcqaryex;Ls3/lohkmxcimj;Lkotlin/coroutines/khjnvckbwi;)Ljava/lang/Object;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x18
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lkotlin/jvm/internal/Lambda;",
+        "Ls3/lsvcqaryex<",
+        "Lio/ktor/client/request/HttpRequestBuilder;",
+        "Lkotlin/nqvfgldikg;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field final synthetic $port:Ljava/lang/Integer;
+
+.field final synthetic $request:Ls3/lsvcqaryex;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ls3/lsvcqaryex<",
+            "Lio/ktor/client/request/HttpRequestBuilder;",
+            "Lkotlin/nqvfgldikg;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method constructor <init>(Ljava/lang/Integer;Ls3/lsvcqaryex;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Integer;",
+            "Ls3/lsvcqaryex<",
+            "-",
+            "Lio/ktor/client/request/HttpRequestBuilder;",
+            "Lkotlin/nqvfgldikg;",
+            ">;)V"
+        }
+    .end annotation
+
+    iput-object p1, p0, Lio/ktor/client/plugins/websocket/BuildersKt$wss$8;->$port:Ljava/lang/Integer;
+
+    iput-object p2, p0, Lio/ktor/client/plugins/websocket/BuildersKt$wss$8;->$request:Ls3/lsvcqaryex;
+
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    check-cast p1, Lio/ktor/client/request/HttpRequestBuilder;
+
+    invoke-virtual {p0, p1}, Lio/ktor/client/plugins/websocket/BuildersKt$wss$8;->invoke(Lio/ktor/client/request/HttpRequestBuilder;)V
+
+    sget-object p1, Lkotlin/nqvfgldikg;->qfzjddwuyn:Lkotlin/nqvfgldikg;
+
+    return-object p1
+.end method
+
+.method public final invoke(Lio/ktor/client/request/HttpRequestBuilder;)V
+    .locals 2
+    .param p1    # Lio/ktor/client/request/HttpRequestBuilder;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+
+    const-string v0, "$this$webSocket"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 2
+    invoke-virtual {p1}, Lio/ktor/client/request/HttpRequestBuilder;->drkbbjxjkt()Lio/ktor/http/qzbvjsuekv;
+
+    move-result-object v0
+
+    sget-object v1, Lio/ktor/http/klvawbfmro;->khjnvckbwi:Lio/ktor/http/klvawbfmro$qfzjddwuyn;
+
+    invoke-virtual {v1}, Lio/ktor/http/klvawbfmro$qfzjddwuyn;->nhdortzefg()Lio/ktor/http/klvawbfmro;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lio/ktor/http/qzbvjsuekv;->kedepleukr(Lio/ktor/http/klvawbfmro;)V
+
+    .line 3
+    iget-object v0, p0, Lio/ktor/client/plugins/websocket/BuildersKt$wss$8;->$port:Ljava/lang/Integer;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Lio/ktor/client/request/HttpRequestBuilder;->drkbbjxjkt()Lio/ktor/http/qzbvjsuekv;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lio/ktor/client/plugins/websocket/BuildersKt$wss$8;->$port:Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lio/ktor/http/qzbvjsuekv;->cqwyelzfbm(I)V
+
+    .line 4
+    :cond_0
+    iget-object v0, p0, Lio/ktor/client/plugins/websocket/BuildersKt$wss$8;->$request:Ls3/lsvcqaryex;
+
+    invoke-interface {v0, p1}, Ls3/lsvcqaryex;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method

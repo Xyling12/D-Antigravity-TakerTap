@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinator" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" app:contentInsetLeft="@dimen/toolbar_left" app:contentInsetStart="@dimen/toolbar_left" app:popupTheme="@style/ToolbarTheme" style="@style/HeaderBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/wrapper" android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <com.soft373.taxi.ui.CustomEditText android:theme="@style/MyEditTextTheme" android:textSize="20.0sp" android:textColor="@color/et_text" android:textColorHint="@color/et_hint" android:id="@id/etSearch" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_s" android:layout_marginTop="@dimen/margin_s" android:layout_marginRight="@dimen/margin_s" android:hint="@string/registration_feature_hint" android:maxLines="1" android:singleLine="true" android:maxLength="100" android:inputType="textPostalAddress" android:imeOptions="flagNoExtractUi" app:edit_text_font="regular" />
+                <TextView android:textSize="20.0sp" android:textColor="@color/white" android:id="@id/tvSubtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/restore_cities" android:layout_marginHorizontal="16.0dip" />
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/rvList" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/wrapperNext" android:background="@drawable/next_button" android:layout_width="fill_parent" android:layout_height="72.0dip" android:layout_margin="3.0dip">
+                <TextView android:textSize="20.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/textButton" android:background="?selectableItemBackground" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/Registration_car_auto_action" android:textAllCaps="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:theme="@style/ElevationCompatTheme" android:background="@drawable/elevation_compat" android:layout_width="fill_parent" android:layout_height="4.0dip" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

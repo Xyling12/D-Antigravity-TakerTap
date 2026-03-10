@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/navigation_want_home" app:startDestination="@id/state_fragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <action android:id="@id/action_parking_back" app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim" app:popUpTo="@id/parking_fragment" app:popUpToInclusive="true" />
+    <fragment android:label="state_fragment" android:name="com.soft373.taxi.fragments.StateWantHomeFragment" android:id="@id/state_fragment">
+        <action android:id="@id/action_select" app:destination="@id/parking_fragment" app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment android:label="parking_fragment" android:name="com.soft373.taxi.fragments.ParkingsWantHomeFragment" android:id="@id/parking_fragment" />
+</navigation>

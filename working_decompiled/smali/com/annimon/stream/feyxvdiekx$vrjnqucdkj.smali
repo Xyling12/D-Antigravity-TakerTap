@@ -1,0 +1,65 @@
+.class final Lcom/annimon/stream/feyxvdiekx$vrjnqucdkj;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/annimon/stream/function/oltojwzksj;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/annimon/stream/feyxvdiekx;->erplbhbeyt()Lcom/annimon/stream/qfzjddwuyn;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x8
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/annimon/stream/function/oltojwzksj<",
+        "Ljava/util/Set<",
+        "TT;>;>;"
+    }
+.end annotation
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/annimon/stream/feyxvdiekx$vrjnqucdkj;->qfzjddwuyn()Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public qfzjddwuyn()Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "TT;>;"
+        }
+    .end annotation
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    return-object v0
+.end method

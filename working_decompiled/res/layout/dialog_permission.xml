@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/dialog_background_white_perm" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/btn_wrapper">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.soft373.taxi.ui.CustomTextView android:textSize="20.0sp" android:textColor="@color/inactive_btn_text" android:id="@id/text_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_s" android:layout_marginTop="@dimen/margin_ss" android:layout_marginRight="@dimen/margin_s" android:text="@string/permission_dialog_title" app:text_font="medium" />
+            <com.soft373.taxi.ui.PermissionRow android:id="@id/camera" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_s" android:layout_marginTop="@dimen/margin_s" android:layout_marginRight="@dimen/margin_s" app:permissionDesc="@string/permission_dialog_camera_desc" app:permissionTitle="@string/permission_dialog_camera_title" />
+            <com.soft373.taxi.ui.PermissionRow android:id="@id/location" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_s" android:layout_marginTop="@dimen/margin_s" android:layout_marginRight="@dimen/margin_s" app:permissionDesc="@string/permission_dialog_location_desc" app:permissionTitle="@string/permission_dialog_location_title" />
+            <com.soft373.taxi.ui.PermissionRow android:id="@id/memory" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_s" android:layout_marginTop="@dimen/margin_s" android:layout_marginRight="@dimen/margin_s" app:permissionDesc="@string/permission_dialog_memory_desc" app:permissionTitle="@string/permission_dialog_memory_title" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:gravity="end" android:orientation="horizontal" android:id="@id/btn_wrapper" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_ls" android:layout_marginBottom="@dimen/margin_lls" android:layout_alignParentBottom="true">
+        <Button android:textSize="14.0sp" android:textColor="@color/accent" android:layout_gravity="end" android:id="@id/btn_ok" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Continue" android:textAllCaps="true" style="@style/Widget.AppCompat.Button.Borderless" />
+    </LinearLayout>
+</RelativeLayout>

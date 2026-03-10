@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinator" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" app:contentInsetLeft="@dimen/toolbar_left" app:contentInsetStart="@dimen/toolbar_left" app:popupTheme="@style/ToolbarTheme" style="@style/HeaderBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView android:orientation="vertical" android:id="@id/wrapper" android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/message_alert" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            <androidx.appcompat.widget.AppCompatTextView android:textSize="18.0dip" android:textColor="@color/white" android:gravity="center_vertical" android:id="@id/enet" android:background="@drawable/bg_dark_gray_btn" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginTop="8.0dip" android:text="@string/pay_title_enet_bridge" android:drawablePadding="32.0dip" android:fontFamily="sans-serif" android:paddingStart="14.0dip" android:paddingEnd="14.0dip" android:layout_marginStart="2.0dip" android:layout_marginEnd="2.0dip" app:drawableStartCompat="@drawable/elexnet" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginTop="6.0dip" android:src="@drawable/sber" android:layout_marginStart="16.0dip" />
+                <androidx.appcompat.widget.AppCompatTextView android:textSize="20.0dip" android:textColor="@color/white" android:id="@id/sb_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/pay_title_sb_bridge" android:fontFamily="sans-serif" android:layout_marginStart="32.0dip" android:layout_marginEnd="12.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_bullet" android:layout_marginStart="16.0dip" />
+                <androidx.appcompat.widget.AppCompatTextView android:textSize="16.0dip" android:textColor="@color/white" android:id="@id/sb_title_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/pay_title_sb_1_bridge" android:fontFamily="sans-serif" android:layout_marginStart="32.0dip" android:layout_marginEnd="12.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_bullet" android:layout_marginStart="16.0dip" />
+                <androidx.appcompat.widget.AppCompatTextView android:textSize="16.0dip" android:textColor="@color/white" android:id="@id/sb_title_2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/pay_title_sb_2_bridge" android:fontFamily="sans-serif" android:layout_marginStart="32.0dip" android:layout_marginEnd="12.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_bullet" android:layout_marginStart="16.0dip" />
+                <androidx.appcompat.widget.AppCompatTextView android:textSize="16.0dip" android:textColor="@color/white" android:id="@id/sb_title_3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/pay_title_sb_3_bridge" android:fontFamily="sans-serif" android:layout_marginStart="32.0dip" android:layout_marginEnd="12.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_bullet" android:layout_marginStart="16.0dip" />
+                <androidx.appcompat.widget.AppCompatTextView android:textSize="16.0dip" android:textColor="@color/white" android:id="@id/sb_title_4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/pay_title_sb_4_bridge" android:fontFamily="sans-serif" android:layout_marginStart="32.0dip" android:layout_marginEnd="12.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="26.0dip">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_alarm" android:layout_marginStart="16.0dip" />
+                <androidx.appcompat.widget.AppCompatTextView android:textSize="16.0dip" android:textColor="@color/white" android:id="@id/sb_title_5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="32.0dip" android:text="@string/pay_title_sb_5_bridge" android:fontFamily="sans-serif" android:layout_marginStart="32.0dip" android:layout_marginEnd="12.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <View android:theme="@style/ElevationCompatTheme" android:background="@drawable/elevation_compat" android:layout_width="fill_parent" android:layout_height="4.0dip" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

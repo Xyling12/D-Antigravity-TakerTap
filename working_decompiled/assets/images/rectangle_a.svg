@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42" height="42" viewBox="0 0 42 42">
+    <defs>
+        <linearGradient id="a" x1="50%" x2="50%" y1=".891%" y2="100%">
+            <stop offset="0%" stop-opacity="0"/>
+            <stop offset="100%"/>
+        </linearGradient>
+        <path id="b" d="M20 24.959C13.84 24.45 9 19.29 9 13 9 6.373 14.373 1 21 1s12 5.373 12 12c0 6.29-4.84 11.45-11 11.959V42a1 1 0 0 1-2 0V24.959z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="url(#a)" d="M27.023 26.474a1 1 0 0 1 1 1v17a1 1 0 1 1-2 0v-17a1 1 0 0 1 1-1z" opacity=".4" transform="rotate(45 28.23 35.474)"/>
+        <g transform="translate(0 -1)">
+            <use fill="#5CD276" xlink:href="#b"/>
+            <path stroke="#282E34" stroke-width="2" d="M20.082 23.962l.918.076V42 24.038l.918-.076C27.595 23.494 32 18.734 32 13c0-6.075-4.925-11-11-11S10 6.925 10 13c0 5.734 4.405 10.494 10.082 10.962z"/>
+        </g>
+        <text fill="#282E34" font-family="Roboto-Medium, Roboto" font-size="18" font-weight="400" transform="translate(0 -1)">
+            <tspan x="15.199" y="19">А</tspan>
+        </text>
+    </g>
+</svg>

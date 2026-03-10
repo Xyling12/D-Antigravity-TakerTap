@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinator" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" app:contentInsetLeft="@dimen/toolbar_left" app:contentInsetStart="@dimen/toolbar_left" app:popupTheme="@style/ToolbarTheme" style="@style/HeaderBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout android:id="@id/wrapper" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.soft373.taxi.ui.RoundProgressBar android:id="@id/loadingProgress" android:layout_width="140.0dip" android:layout_height="140.0dip" android:layout_centerInParent="true" app:max="100" app:progress="0" app:progressBarThickness="12.0dip" app:progressbarBgColor="@color/inactive_btn" app:progressbarColor="@color/et_active" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/inactive_btn_text" android:gravity="center" android:id="@id/progressDescription" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0\nиз 100" android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <View android:theme="@style/ElevationCompatTheme" android:background="@drawable/elevation_compat" android:layout_width="fill_parent" android:layout_height="4.0dip" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,46 @@
+.class Landroidx/camera/video/internal/encoder/EncoderImpl$ibzphkbtmt;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation build Landroidx/annotation/epwdywcysm;
+    value = 0x17
+.end annotation
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/camera/video/internal/encoder/EncoderImpl;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0xa
+    name = "ibzphkbtmt"
+.end annotation
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method static feyxvdiekx(Landroid/media/MediaCodec;Landroid/view/Surface;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroid/media/MediaCodec;->setInputSurface(Landroid/view/Surface;)V
+
+    return-void
+.end method
+
+.method static qfzjddwuyn()Landroid/view/Surface;
+    .locals 1
+
+    invoke-static {}, Landroid/media/MediaCodec;->createPersistentInputSurface()Landroid/view/Surface;
+
+    move-result-object v0
+
+    return-object v0
+.end method

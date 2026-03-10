@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:background="@drawable/dialog_background_white_full" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ProgressBar android:layout_gravity="center" android:id="@id/progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="48.0dip" />
+                <TextView android:textSize="28.0sp" android:textColor="@color/inactive_btn_text" android:id="@id/text_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_s" android:layout_marginTop="@dimen/margin_xs" android:layout_marginRight="@dimen/margin_s" android:text="@string/Error" />
+                <TextView android:textSize="18.0sp" android:textColor="@color/inactive_btn_text" android:id="@id/errorText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_s" android:layout_marginTop="@dimen/margin_xs" android:layout_marginRight="@dimen/margin_s" />
+                <LinearLayout android:gravity="end" android:orientation="vertical" android:id="@id/btn_wrapper" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_xs" android:layout_marginBottom="@dimen/margin_lls">
+                    <Button android:textSize="14.0sp" android:textColor="@color/accent" android:gravity="end|center" android:id="@id/sendErrorButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Send_message_to_developers" android:textAllCaps="true" style="@style/Widget.AppCompat.Button.Borderless" />
+                    <Button android:textSize="14.0sp" android:textColor="@color/accent" android:gravity="end|center" android:id="@id/updateButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Start_update_process" android:textAllCaps="true" style="@style/Widget.AppCompat.Button.Borderless" />
+                    <Button android:textSize="14.0sp" android:textColor="@color/accent" android:gravity="end|center" android:id="@id/launchButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Try_to_start_application" android:textAllCaps="true" style="@style/Widget.AppCompat.Button.Borderless" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

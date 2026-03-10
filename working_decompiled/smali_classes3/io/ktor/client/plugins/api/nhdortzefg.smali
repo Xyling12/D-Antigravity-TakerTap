@@ -1,0 +1,18 @@
+.class public final Lio/ktor/client/plugins/api/nhdortzefg;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation runtime Lio/ktor/util/lqubyxtgks;
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

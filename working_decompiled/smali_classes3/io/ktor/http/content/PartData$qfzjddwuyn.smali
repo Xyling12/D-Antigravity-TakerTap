@@ -1,0 +1,102 @@
+.class public final Lio/ktor/http/content/PartData$qfzjddwuyn;
+.super Lio/ktor/http/content/PartData;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lio/ktor/http/content/PartData;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "qfzjddwuyn"
+.end annotation
+
+
+# instance fields
+.field private final qhoahqxrkc:Ls3/qfzjddwuyn;
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ls3/qfzjddwuyn<",
+            "Lio/ktor/utils/io/core/pednzybqgd;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Ls3/qfzjddwuyn;Ls3/qfzjddwuyn;Lio/ktor/http/ldyhhegomq;)V
+    .locals 1
+    .param p1    # Ls3/qfzjddwuyn;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .param p2    # Ls3/qfzjddwuyn;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .param p3    # Lio/ktor/http/ldyhhegomq;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ls3/qfzjddwuyn<",
+            "+",
+            "Lio/ktor/utils/io/core/pednzybqgd;",
+            ">;",
+            "Ls3/qfzjddwuyn<",
+            "Lkotlin/nqvfgldikg;",
+            ">;",
+            "Lio/ktor/http/ldyhhegomq;",
+            ")V"
+        }
+    .end annotation
+
+    const-string v0, "provider"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "dispose"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "partHeaders"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p2, p3, v0}, Lio/ktor/http/content/PartData;-><init>(Ls3/qfzjddwuyn;Lio/ktor/http/ldyhhegomq;Lkotlin/jvm/internal/pyxggrwgoy;)V
+
+    iput-object p1, p0, Lio/ktor/http/content/PartData$qfzjddwuyn;->qhoahqxrkc:Ls3/qfzjddwuyn;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final tthmnequln()Ls3/qfzjddwuyn;
+    .locals 1
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ls3/qfzjddwuyn<",
+            "Lio/ktor/utils/io/core/pednzybqgd;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lio/ktor/http/content/PartData$qfzjddwuyn;->qhoahqxrkc:Ls3/qfzjddwuyn;
+
+    return-object v0
+.end method

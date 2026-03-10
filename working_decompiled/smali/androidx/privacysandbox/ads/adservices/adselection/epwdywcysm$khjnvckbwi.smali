@@ -1,0 +1,64 @@
+.class final Landroidx/privacysandbox/ads/adservices/adselection/epwdywcysm$khjnvckbwi;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation build Landroidx/annotation/strivszpdp$qfzjddwuyn;
+    value = {
+        .subannotation Landroidx/annotation/strivszpdp;
+            extension = 0xf4240
+            version = 0x8
+        .end subannotation,
+        .subannotation Landroidx/annotation/strivszpdp;
+            extension = 0x1f
+            version = 0x9
+        .end subannotation
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/privacysandbox/ads/adservices/adselection/epwdywcysm;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1a
+    name = "khjnvckbwi"
+.end annotation
+
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/privacysandbox/ads/adservices/adselection/epwdywcysm$khjnvckbwi$qfzjddwuyn;
+    }
+.end annotation
+
+
+# static fields
+.field public static final qfzjddwuyn:Landroidx/privacysandbox/ads/adservices/adselection/epwdywcysm$khjnvckbwi$qfzjddwuyn;
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+.end field
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Landroidx/privacysandbox/ads/adservices/adselection/epwdywcysm$khjnvckbwi$qfzjddwuyn;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Landroidx/privacysandbox/ads/adservices/adselection/epwdywcysm$khjnvckbwi$qfzjddwuyn;-><init>(Lkotlin/jvm/internal/pyxggrwgoy;)V
+
+    sput-object v0, Landroidx/privacysandbox/ads/adservices/adselection/epwdywcysm$khjnvckbwi;->qfzjddwuyn:Landroidx/privacysandbox/ads/adservices/adselection/epwdywcysm$khjnvckbwi$qfzjddwuyn;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

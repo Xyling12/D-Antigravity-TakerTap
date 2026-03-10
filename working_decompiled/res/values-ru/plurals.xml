@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d нового уведомления</item>
+        <item quantity="one">%d новое уведомление</item>
+        <item quantity="few">%d новых уведомления</item>
+        <item quantity="many">%d новых уведомлений</item>
+    </plurals>
+    <plurals name="numberOfPointsYouCanGet">
+        <item quantity="other">За выполнение этого заказа Вам будет начислено %d бонусов</item>
+        <item quantity="one">За выполнение этого заказа Вам будет начислен %d бонус</item>
+        <item quantity="few">За выполнение этого заказа Вам будет начислено %d бонуса</item>
+        <item quantity="many">За выполнение этого заказа Вам будет начислено %d бонусов</item>
+    </plurals>
+</resources>

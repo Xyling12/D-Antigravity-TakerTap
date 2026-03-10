@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d new notifications</item>
+        <item quantity="one">%d new notification</item>
+    </plurals>
+    <plurals name="numberOfPointsYouCanGet">
+        <item quantity="other">You can get %d points for this order</item>
+        <item quantity="one">You can get %d point for this order</item>
+    </plurals>
+    <plurals name="want_home_free_title">
+        <item quantity="other">"доступных
+услуг"</item>
+        <item quantity="one">"доступная
+услуга"</item>
+        <item quantity="few">"доступных
+услуги"</item>
+        <item quantity="many">"доступных
+услуг"</item>
+    </plurals>
+    <plurals name="want_home_rejections">
+        <item quantity="other">%1$d-и не принятых заказов</item>
+        <item quantity="one">%1$d-го не принятого заказа</item>
+        <item quantity="few">%1$d-х не принятых заказов</item>
+        <item quantity="many">%1$d-и не принятых заказов</item>
+    </plurals>
+</resources>

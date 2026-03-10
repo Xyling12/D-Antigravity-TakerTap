@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">izhevsk.373soft.ru</domain>
+        <domain includeSubdomains="true">most.373soft.ru</domain>
+        <domain includeSubdomains="true">cities.373soft.ru</domain>
+        <domain includeSubdomains="true">cities-test.373soft.ru</domain>
+        <domain includeSubdomains="true">ts.373soft.ru</domain>
+        <domain includeSubdomains="true">ts-test.373soft.ru</domain>
+        <domain includeSubdomains="true">login.373soft.ru</domain>
+        <domain includeSubdomains="true">login2.373soft.ru</domain>
+        <domain includeSubdomains="true">testmost.373soft.ru</domain>
+        <domain includeSubdomains="true">373soft.ru</domain>
+        <domain includeSubdomains="true">openstreetmap.org</domain>
+        <domain includeSubdomains="false">185.171.82.112</domain>
+    </domain-config>
+</network-security-config>

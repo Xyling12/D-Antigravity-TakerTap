@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list android:opacity="opaque"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="#ffededed" />
+            <size android:height="640.0dip" android:width="360.0dip" />
+        </shape>
+    </item>
+    <item android:bottom="160.0dip">
+        <bitmap android:gravity="center" android:src="@drawable/logotype_tapdriver" />
+    </item>
+    <item>
+        <bitmap android:gravity="center" android:src="@drawable/combined_shape" />
+    </item>
+</layer-list>

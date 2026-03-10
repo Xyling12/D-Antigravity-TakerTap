@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffededed" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <androidx.appcompat.widget.AppCompatImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/logotype_tapdriver" />
+            <androidx.appcompat.widget.AppCompatImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:src="@drawable/combined_shape" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip">
+            <com.soft373.taxi.ui.CustomTextView android:textSize="12.0sp" android:textColor="#ff7a7a7a" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="@string/splash_version_label" app:text_font="regular" />
+            <RelativeLayout android:orientation="horizontal" android:id="@id/btn_enter_wrapper" android:background="@drawable/next_button3" android:layout_width="fill_parent" android:layout_height="56.0dip" android:layout_margin="4.0dip">
+                <com.soft373.taxi.ui.CustomTextView android:textSize="18.0sp" android:textColor="#ff282e34" android:gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/splash_enter_taxi" android:layout_centerInParent="true" android:textAllCaps="true" app:text_font="medium" />
+                <View android:id="@id/btn_enter" android:background="?selectableItemBackground" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </RelativeLayout>
+            <RelativeLayout android:gravity="center" android:orientation="horizontal" android:id="@id/btn_enter_bridge_wrapper" android:background="@drawable/next_button3" android:layout_width="fill_parent" android:layout_height="56.0dip" android:layout_margin="4.0dip">
+                <com.soft373.taxi.ui.CustomTextView android:textSize="18.0sp" android:textColor="#ff282e34" android:gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/splash_enter_bridge" android:layout_centerInParent="true" android:textAllCaps="true" app:text_font="medium" />
+                <View android:id="@id/btn_enter_bridge" android:background="?selectableItemBackground" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/btn_reg_wrapper" android:background="@drawable/next_button2" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="56.0dip" android:layout_marginLeft="4.0dip" android:layout_marginTop="@dimen/margin_llls" android:layout_marginRight="4.0dip" android:layout_marginBottom="@dimen/margin_lls">
+            <com.soft373.taxi.ui.CustomTextView android:textSize="18.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/btn_reg" android:background="?selectableItemBackground" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/splash_reg" android:textAllCaps="true" app:text_font="medium" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.airbnb.lottie.LottieAnimationView android:id="@id/snow" android:layout_width="fill_parent" android:layout_height="wrap_content" android:alpha="0.0" app:lottie_autoPlay="true" app:lottie_loop="true" app:lottie_rawRes="@raw/ny_2022" />
+</RelativeLayout>

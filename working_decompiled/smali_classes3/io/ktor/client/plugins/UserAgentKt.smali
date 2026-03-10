@@ -1,0 +1,88 @@
+.class public final Lio/ktor/client/plugins/UserAgentKt;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field private static final qfzjddwuyn:Lorg/slf4j/khjnvckbwi;
+    .annotation build Ld6/ktvtxjqbtt;
+    .end annotation
+.end field
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "io.ktor.client.plugins.UserAgent"
+
+    invoke-static {v0}, Lu2/qfzjddwuyn;->qfzjddwuyn(Ljava/lang/String;)Lorg/slf4j/khjnvckbwi;
+
+    move-result-object v0
+
+    sput-object v0, Lio/ktor/client/plugins/UserAgentKt;->qfzjddwuyn:Lorg/slf4j/khjnvckbwi;
+
+    return-void
+.end method
+
+.method public static final feyxvdiekx(Lio/ktor/client/HttpClientConfig;)V
+    .locals 2
+    .param p0    # Lio/ktor/client/HttpClientConfig;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lio/ktor/client/HttpClientConfig<",
+            "*>;)V"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lio/ktor/client/plugins/UserAgent;->feyxvdiekx:Lio/ktor/client/plugins/UserAgent$Plugin;
+
+    sget-object v1, Lio/ktor/client/plugins/UserAgentKt$CurlUserAgent$1;->INSTANCE:Lio/ktor/client/plugins/UserAgentKt$CurlUserAgent$1;
+
+    invoke-virtual {p0, v0, v1}, Lio/ktor/client/HttpClientConfig;->tthmnequln(Lio/ktor/client/plugins/HttpClientPlugin;Ls3/lsvcqaryex;)V
+
+    return-void
+.end method
+
+.method public static final synthetic khjnvckbwi()Lorg/slf4j/khjnvckbwi;
+    .locals 1
+
+    sget-object v0, Lio/ktor/client/plugins/UserAgentKt;->qfzjddwuyn:Lorg/slf4j/khjnvckbwi;
+
+    return-object v0
+.end method
+
+.method public static final qfzjddwuyn(Lio/ktor/client/HttpClientConfig;)V
+    .locals 2
+    .param p0    # Lio/ktor/client/HttpClientConfig;
+        .annotation build Ld6/ktvtxjqbtt;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lio/ktor/client/HttpClientConfig<",
+            "*>;)V"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/erplbhbeyt;->lohkmxcimj(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lio/ktor/client/plugins/UserAgent;->feyxvdiekx:Lio/ktor/client/plugins/UserAgent$Plugin;
+
+    sget-object v1, Lio/ktor/client/plugins/UserAgentKt$BrowserUserAgent$1;->INSTANCE:Lio/ktor/client/plugins/UserAgentKt$BrowserUserAgent$1;
+
+    invoke-virtual {p0, v0, v1}, Lio/ktor/client/HttpClientConfig;->tthmnequln(Lio/ktor/client/plugins/HttpClientPlugin;Ls3/lsvcqaryex;)V
+
+    return-void
+.end method

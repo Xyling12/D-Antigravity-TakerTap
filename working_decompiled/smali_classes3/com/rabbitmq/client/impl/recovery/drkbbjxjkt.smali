@@ -1,0 +1,36 @@
+.class public final synthetic Lcom/rabbitmq/client/impl/recovery/drkbbjxjkt;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
+
+
+# instance fields
+.field public final synthetic cbsxzgznvp:Lcom/rabbitmq/client/impl/recovery/nnapbkpnda;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/rabbitmq/client/impl/recovery/nnapbkpnda;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/rabbitmq/client/impl/recovery/drkbbjxjkt;->cbsxzgznvp:Lcom/rabbitmq/client/impl/recovery/nnapbkpnda;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final call()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lcom/rabbitmq/client/impl/recovery/drkbbjxjkt;->cbsxzgznvp:Lcom/rabbitmq/client/impl/recovery/nnapbkpnda;
+
+    invoke-static {v0}, Lcom/rabbitmq/client/impl/recovery/tgyvlqjbcn;->erplbhbeyt(Lcom/rabbitmq/client/impl/recovery/nnapbkpnda;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method

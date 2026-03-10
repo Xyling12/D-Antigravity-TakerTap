@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinator" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" app:contentInsetLeft="@dimen/toolbar_left" app:contentInsetStart="@dimen/toolbar_left" app:popupTheme="@style/ToolbarTheme" style="@style/HeaderBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/wrapper" android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_s" android:layout_marginRight="@dimen/margin_s">
+                    <TextView android:textSize="20.0sp" android:textColor="@drawable/text_color_white" android:layout_gravity="center" android:id="@id/text_authentication" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_s" />
+                    <TextView android:textSize="16.0sp" android:textColor="@drawable/text_color_white" android:layout_gravity="center" android:id="@id/text_uploading" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_lls" />
+                    <TextView android:textSize="14.0sp" android:textColor="@drawable/text_color_white" android:layout_gravity="center" android:id="@id/text_detail" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_lls" />
+                    <View android:layout_width="fill_parent" android:layout_height="@dimen/margin_s" />
+                    <RelativeLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_weight="1.0">
+                        <com.soft373.taxi.ui.RoundProgressBar android:layout_gravity="center" android:id="@id/loading_progress" android:layout_width="fill_parent" android:layout_height="fill_parent" app:max="100" app:progress="0" app:progressBarThickness="12.0dip" app:progressbarBgColor="@color/inactive_btn" app:progressbarColor="@color/et_active" />
+                        <com.soft373.taxi.ui.CustomTextView android:textSize="12.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/progress_description" android:layout_width="120.0dip" android:layout_height="120.0dip" android:layout_centerInParent="true" app:text_font="light" />
+                    </RelativeLayout>
+                    <androidx.legacy.widget.Space android:layout_width="fill_parent" android:layout_height="@dimen/margin_s" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/btn_try_wrapper" android:background="@drawable/next_button" android:layout_width="fill_parent" android:layout_height="72.0dip" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip">
+                <com.soft373.taxi.ui.CustomTextView android:textSize="20.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/button_try_again" android:background="?selectableItemBackground" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/Try_again" android:textAllCaps="true" app:text_font="medium" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/button_next_wrapper" android:background="@drawable/reg_button" android:layout_width="fill_parent" android:layout_height="72.0dip" android:layout_marginLeft="3.0dip" android:layout_marginTop="@dimen/margin_lls" android:layout_marginRight="3.0dip" android:layout_marginBottom="@dimen/margin_lls">
+                <com.soft373.taxi.ui.CustomTextView android:textSize="20.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/button_next" android:background="?selectableItemBackground" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/Close" android:textAllCaps="true" app:text_font="medium" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:theme="@style/ElevationCompatTheme" android:background="@drawable/elevation_compat" android:layout_width="fill_parent" android:layout_height="4.0dip" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

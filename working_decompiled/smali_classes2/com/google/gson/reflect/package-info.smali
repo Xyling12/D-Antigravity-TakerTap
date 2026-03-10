@@ -1,0 +1,8 @@
+.class interface abstract synthetic Lcom/google/gson/reflect/package-info;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation runtime Lr/feyxvdiekx;
+.end annotation

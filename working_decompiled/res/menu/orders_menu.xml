@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/map_mini" android:id="@id/showOnMap" android:title="@string/Show_orders_on_map" app:showAsAction="always" />
+    <item android:icon="@drawable/map_mini_dark" android:id="@id/showOnMapDark" android:title="@string/Show_orders_on_map" app:showAsAction="always" />
+</menu>
