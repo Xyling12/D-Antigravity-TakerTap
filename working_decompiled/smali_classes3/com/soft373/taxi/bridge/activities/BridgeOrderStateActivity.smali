@@ -1879,11 +1879,29 @@
 
     invoke-virtual {v0}, Lcom/soft373/taxi/AppBaseActivity;->W1()V
 
+    # === TAKERTAP CRASH FIX: wrap roadvibe init in try-catch ===
+    :try_start_roadvibe
     invoke-static {v0}, Li2/tthmnequln;->feyxvdiekx(Landroid/content/Context;)Lcom/spark/roadvibe/lib/qhoahqxrkc;
 
     move-result-object v5
 
     iput-object v5, v0, Lcom/soft373/taxi/bridge/activities/BridgeOrderStateActivity;->y0:Lcom/spark/roadvibe/lib/qhoahqxrkc;
+    :try_end_roadvibe
+    .catch Ljava/lang/Exception; {:try_start_roadvibe .. :try_end_roadvibe} :catch_roadvibe
+
+    goto :goto_roadvibe_ok
+
+    :catch_roadvibe
+    move-exception v5
+
+    const-string v5, "TAKERTAP_DBG"
+
+    const-string v6, "RoadVibe init failed (KotlinBuiltIns), y0 stays null"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_roadvibe_ok
+    # === TAKERTAP CRASH FIX END ===
 
     const v5, 0x7f0903cb
 

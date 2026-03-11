@@ -5,9 +5,9 @@ import os
 import logging
 import requests
 from datetime import datetime, date
-from telegram import Update
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
-    ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler, filters
+    ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes, MessageHandler, filters
 )
 
 logging.basicConfig(level=logging.INFO)
@@ -93,16 +93,66 @@ async def cmd_remove(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     if not is_allowed(update):
         return
     args = ctx.args
-    if len(args) < 2:
-        await update.message.reply_text("Использование: `/remove Откуда Куда`", parse_mode="Markdown")
+    if len(args) >= 2:
+        from_kw = normalize(args[0])
+        to_kw   = normalize(args[1])
+        try:
+            api("post", "/routes/remove", json={"from_kw": from_kw, "to_kw": to_kw})
+            await update.message.reply_text(f"🗑 Маршрут удалён: *{from_kw} → {to_kw}*", parse_mode="Markdown")
+        except Exception as e:
+            await update.message.reply_text(f"❌ Ошибка: {e}")
         return
-    from_kw = normalize(args[0])
-    to_kw   = normalize(args[1])
+    # Без аргументов — показать кнопки
     try:
-        api("post", "/routes/remove", json={"from_kw": from_kw, "to_kw": to_kw})
-        await update.message.reply_text(f"🗑 Маршрут удалён: *{from_kw} → {to_kw}*", parse_mode="Markdown")
+        data = api("get", "/routes")
+        active = [r for r in data if r["active"]]
+        if not active:
+            await update.message.reply_text("📋 Нет активных маршрутов для удаления")
+            return
+        buttons = [
+            [InlineKeyboardButton(
+                f"🗑 {r['from_kw']} → {r['to_kw']}",
+                callback_data=f"rm:{r['from_kw']}:{r['to_kw']}"
+            )]
+            for r in active
+        ]
+        await update.message.reply_text(
+            "Выберите маршрут для удаления:",
+            reply_markup=InlineKeyboardMarkup(buttons)
+        )
     except Exception as e:
         await update.message.reply_text(f"❌ Ошибка: {e}")
+
+
+async def callback_remove_route(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    parts = query.data.split(":", 2)
+    if len(parts) != 3 or parts[0] != "rm":
+        return
+    from_kw, to_kw = parts[1], parts[2]
+    try:
+        api("post", "/routes/remove", json={"from_kw": from_kw, "to_kw": to_kw})
+        # Показать оставшиеся маршруты
+        data = api("get", "/routes")
+        active = [r for r in data if r["active"]]
+        if not active:
+            await query.edit_message_text(f"🗑 Удалён: *{from_kw} → {to_kw}*\n\n✅ Все маршруты удалены", parse_mode="Markdown")
+            return
+        buttons = [
+            [InlineKeyboardButton(
+                f"🗑 {r['from_kw']} → {r['to_kw']}",
+                callback_data=f"rm:{r['from_kw']}:{r['to_kw']}"
+            )]
+            for r in active
+        ]
+        await query.edit_message_text(
+            f"🗑 Удалён: *{from_kw} → {to_kw}*\n\nОставшиеся ({len(active)}):",
+            parse_mode="Markdown",
+            reply_markup=InlineKeyboardMarkup(buttons)
+        )
+    except Exception as e:
+        await query.edit_message_text(f"❌ Ошибка: {e}")
 
 
 async def cmd_list(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
@@ -219,6 +269,7 @@ def main():
     app.add_handler(CommandHandler("adduser",     cmd_adduser))
     app.add_handler(CommandHandler("removeuser",  cmd_removeuser))
     app.add_handler(CommandHandler("users",       cmd_users))
+    app.add_handler(CallbackQueryHandler(callback_remove_route, pattern=r"^rm:"))
     logger.info("TakerTap Bot запущен")
     app.run_polling()
 

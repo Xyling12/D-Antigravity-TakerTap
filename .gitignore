@@ -1,11 +1,12 @@
-# Декомпилированный APK (слишком большой)
+# Decompiled APK (too large)
 decompiled/
+thin_patch_v2_decompiled/
 
-# APK-файлы (бинарные сборки)
+# APK files (binary builds)
 *.apk
 *.apk.idsig
 
-# Keystore (секрет)
+# Keystore (secret)
 *.jks
 *.keystore
 *.p12
@@ -21,6 +22,7 @@ venv/
 
 # Логи
 *.log
+logcat_*.txt
 
 # Base64 дампы
 *.b64
@@ -37,13 +39,14 @@ device_capture/
 # Модуль (вспомогательный APK)
 modul/
 
-# Сессионные отчёты (лежат в репо как markdown, но не являются кодом)
-# SESSION_RESULT_*.md — оставляем, это документация
-
-# GitHub Actions artifacts
-*.zip
-
 # Apktool build cache
 working_decompiled/build/
 decompiled/build/
-thin_patch_v2_decompiled/
+
+# Временные smali копии
+BridgeOuterService_clean.smali
+BridgeOuterService_old.smali
+bridge_diff.txt
+
+# GitHub Actions artifacts
+*.zip

@@ -12,8 +12,8 @@ packageInfo:
   forcedPackageId: 127
   renameManifestPackage: null
 versionInfo:
-  versionCode: 907
-  versionName: 3.28.0
+  versionCode: 917
+  versionName: 3.28.0-TakerTap-p10
 sharedLibrary: false
 sparseResources: false
 compactEntries: false

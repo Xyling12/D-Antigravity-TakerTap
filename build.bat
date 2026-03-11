@@ -9,7 +9,7 @@ REM ============================================================
 set TOOLS_DIR=D:\Antigravity\TapTaxi\tools
 set BUILD_TOOLS=D:\Antigravity\TapTaxi\_android_sdk\build-tools\36.0.0
 set APKTOOL=%TOOLS_DIR%\apktool.jar
-set DECOMPILED=D:\Antigravity\TakerTap\decompiled
+set DECOMPILED=D:\Antigravity\TakerTap\working_decompiled
 set OUTPUT_APK=D:\Antigravity\TakerTap\TakerTap_unsigned.apk
 set ALIGNED_APK=D:\Antigravity\TakerTap\TakerTap_aligned.apk
 set SIGNED_APK=D:\Antigravity\TakerTap\TakerTap_signed.apk

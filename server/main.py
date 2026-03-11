@@ -227,11 +227,11 @@ def post_log(body: LogIn, x_token: Optional[str] = Header(None)):
 
     # Push в Telegram при авто-принятии
     if body.result == "accepted":
-        price_str = f"{body.price} ₽" if body.price else "—"
+        order_type = "📋 Предварительный" if body.price == 1 else "🚖 Текущий"
         msg = (
             f"✅ <b>Заказ принят автоматически!</b>\n"
+            f"{order_type}\n"
             f"📍 {body.from_city} → {body.to_city}\n"
-            f"💰 {price_str}\n"
             f"🆔 Order #{body.order_id}"
         )
         send_tg_notify(msg)

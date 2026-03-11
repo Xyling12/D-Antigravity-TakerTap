@@ -10,6 +10,8 @@
 
 .field private static lastSyncTime:J
 
+.field private static acceptedIds:Ljava/util/HashSet;
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -27,7 +29,43 @@
 
     sput-wide v0, Lcom/soft373/taxi/services/AutoAcceptHelper;->lastSyncTime:J
 
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    sput-object v0, Lcom/soft373/taxi/services/AutoAcceptHelper;->acceptedIds:Ljava/util/HashSet;
+
     return-void
+.end method
+
+.method public static isNewOrder(I)Z
+    .locals 2
+
+    sget-object v0, Lcom/soft373/taxi/services/AutoAcceptHelper;->acceptedIds:Ljava/util/HashSet;
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :already_accepted
+
+    # Not seen before — add to set and return true
+    sget-object v0, Lcom/soft373/taxi/services/AutoAcceptHelper;->acceptedIds:Ljava/util/HashSet;
+
+    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :already_accepted
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public constructor <init>()V

@@ -1836,6 +1836,156 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/erplbhbeyt;->thjjozpxyz(Ljava/lang/Object;Ljava/lang/String;)V
 
+    # === AUTO-ACCEPT PATCH START (BridgeOuterService — newOrder, route-filtered) ===
+    const-string v0, "TAKERTAP_DBG"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "OUTER newOrder dispatch, orders="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    array-length v2, p1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    # Sync routes from server
+    invoke-static {p0}, Lcom/soft373/taxi/services/AutoAcceptHelper;->startSyncIfNeeded(Landroid/content/Context;)V
+
+    array-length v4, p1
+    const/4 v5, 0x0
+
+    :new_auto_accept_loop
+    if-ge v5, v4, :new_auto_accept_done
+
+    aget-object v0, p1, v5
+
+    invoke-virtual {v0}, Lcom/soft373/taxi/bridge/data/BridgeOrder;->getCurrentState()Lcom/soft373/taxi/bridge/constants/BridgeOrderState;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/soft373/taxi/bridge/constants/BridgeOrderState;->NEW:Lcom/soft373/taxi/bridge/constants/BridgeOrderState;
+
+    if-eq v1, v2, :new_state_match
+
+    sget-object v2, Lcom/soft373/taxi/bridge/constants/BridgeOrderState;->RESERVATION_ORDER_AWAITING_DRIVERS_APPROVAL:Lcom/soft373/taxi/bridge/constants/BridgeOrderState;
+
+    if-eq v1, v2, :new_state_match
+
+    sget-object v2, Lcom/soft373/taxi/bridge/constants/BridgeOrderState;->RESERVATION:Lcom/soft373/taxi/bridge/constants/BridgeOrderState;
+
+    if-eq v1, v2, :new_state_match
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :new_auto_accept_loop
+
+    :new_state_match
+    # Extract from/to city for route check
+    invoke-virtual {v0}, Lcom/soft373/taxi/bridge/data/BridgeOrder;->getBridgeAddressFrom()Lcom/soft373/taxi/bridge/data/BridgeAddress;
+
+    move-result-object v1
+
+    if-eqz v1, :new_skip_order
+
+    invoke-virtual {v1}, Lcom/soft373/taxi/bridge/data/BridgeAddress;->getLongCity()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :new_skip_order
+
+    invoke-virtual {v0}, Lcom/soft373/taxi/bridge/data/BridgeOrder;->getBridgeAddressTo()Lcom/soft373/taxi/bridge/data/BridgeAddress;
+
+    move-result-object v1
+
+    if-eqz v1, :new_skip_order
+
+    invoke-virtual {v1}, Lcom/soft373/taxi/bridge/data/BridgeAddress;->getLongCity()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :new_skip_order
+
+    # Check route via AutoAcceptHelper
+    invoke-static {p0, v2, v3}, Lcom/soft373/taxi/services/AutoAcceptHelper;->shouldAccept(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :new_skip_order
+
+    # Route matched! Send notification and accept order
+    invoke-virtual {v0}, Lcom/soft373/taxi/data/DetailedOrder;->getId()I
+
+    move-result v1
+
+    # Dedup check
+    invoke-static {v1}, Lcom/soft373/taxi/services/AutoAcceptHelper;->isNewOrder(I)Z
+
+    move-result v0
+
+    if-eqz v0, :new_skip_order
+
+    # postLog(fromCity=v2, toCity=v3, orderId=v1, type=0=newOrder)
+    const/4 v0, 0x0
+    invoke-static {v2, v3, v1, v0}, Lcom/soft373/taxi/services/AutoAcceptHelper;->postLog(Ljava/lang/String;Ljava/lang/String;II)V
+
+    # Restore orderId to v3 for J0 call
+    move v3, v1
+
+    const-string v2, "TAKERTAP_DBG"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "OUTER NEW-ORDER AUTO-ACCEPT orderId="
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v1, Lcom/soft373/taxi/bridge/constants/BridgeDriverActionType;->DRIVER_TAKE_ORDER:Lcom/soft373/taxi/bridge/constants/BridgeDriverActionType;
+
+    const/4 v2, 0x0
+
+    const-string v4, "auto-accept"
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+    move v5, v3
+    move v1, v5
+    sget-object v2, Lcom/soft373/taxi/bridge/constants/BridgeDriverActionType;->DRIVER_TAKE_ORDER:Lcom/soft373/taxi/bridge/constants/BridgeDriverActionType;
+    const/4 v3, 0x0
+    const-string v4, "auto-accept"
+    const/4 v5, 0x0
+
+    invoke-direct/range {v0 .. v5}, Lcom/soft373/taxi/bridge/services/BridgeOuterService;->J0(ILcom/soft373/taxi/bridge/constants/BridgeDriverActionType;Ljava/lang/Short;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :new_auto_accept_done
+
+    :new_skip_order
+    add-int/lit8 v5, v5, 0x1
+
+    goto :new_auto_accept_loop
+
+    :new_auto_accept_done
+    # === AUTO-ACCEPT PATCH END (BridgeOuterService — newOrder) ===
+
     sget-object v0, Lcom/soft373/taxi/data/DetailedOrder$OrderType;->newOrder:Lcom/soft373/taxi/data/DetailedOrder$OrderType;
 
     invoke-virtual {p0, p1, v0}, Lcom/soft373/taxi/bridge/services/BridgeAbstractService;->sqegvvfvzl([Lcom/soft373/taxi/bridge/data/BridgeOrder;Lcom/soft373/taxi/data/DetailedOrder$OrderType;)Z
@@ -4503,7 +4653,7 @@
     :cond_6
     :goto_3
 
-    # === AUTO-ACCEPT PATCH START (BridgeOuterService) ===
+    # === AUTO-ACCEPT PATCH START (BridgeOuterService — freeOrder, route-filtered) ===
     const-string v0, "TAKERTAP_DBG"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4523,6 +4673,9 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    # Sync routes from server
+    invoke-static {p0}, Lcom/soft373/taxi/services/AutoAcceptHelper;->startSyncIfNeeded(Landroid/content/Context;)V
 
     array-length v6, p1
     const/4 v7, 0x0
@@ -4561,20 +4714,71 @@
 
     sget-object v2, Lcom/soft373/taxi/bridge/constants/BridgeOrderState;->NEW:Lcom/soft373/taxi/bridge/constants/BridgeOrderState;
 
-    if-eq v1, v2, :outer_auto_accept_match
+    if-eq v1, v2, :outer_state_match
 
     sget-object v2, Lcom/soft373/taxi/bridge/constants/BridgeOrderState;->RESERVATION_ORDER_AWAITING_DRIVERS_APPROVAL:Lcom/soft373/taxi/bridge/constants/BridgeOrderState;
 
-    if-eq v1, v2, :outer_auto_accept_match
+    if-eq v1, v2, :outer_state_match
+
+    sget-object v2, Lcom/soft373/taxi/bridge/constants/BridgeOrderState;->RESERVATION:Lcom/soft373/taxi/bridge/constants/BridgeOrderState;
+
+    if-eq v1, v2, :outer_state_match
 
     add-int/lit8 v7, v7, 0x1
 
     goto :outer_auto_accept_loop
 
-    :outer_auto_accept_match
+    :outer_state_match
+    # Extract from/to city for route check
+    invoke-virtual {v0}, Lcom/soft373/taxi/bridge/data/BridgeOrder;->getBridgeAddressFrom()Lcom/soft373/taxi/bridge/data/BridgeAddress;
+
+    move-result-object v1
+
+    if-eqz v1, :outer_skip_order
+
+    invoke-virtual {v1}, Lcom/soft373/taxi/bridge/data/BridgeAddress;->getLongCity()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :outer_skip_order
+
+    invoke-virtual {v0}, Lcom/soft373/taxi/bridge/data/BridgeOrder;->getBridgeAddressTo()Lcom/soft373/taxi/bridge/data/BridgeAddress;
+
+    move-result-object v1
+
+    if-eqz v1, :outer_skip_order
+
+    invoke-virtual {v1}, Lcom/soft373/taxi/bridge/data/BridgeAddress;->getLongCity()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :outer_skip_order
+
+    # Check route via AutoAcceptHelper.shouldAccept(Context, fromCity, toCity)
+    invoke-static {p0, v2, v3}, Lcom/soft373/taxi/services/AutoAcceptHelper;->shouldAccept(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :outer_skip_order
+
+    # Route matched! Send notification and accept order
     invoke-virtual {v0}, Lcom/soft373/taxi/data/DetailedOrder;->getId()I
 
-    move-result v3
+    move-result v1
+
+    # Dedup check
+    invoke-static {v1}, Lcom/soft373/taxi/services/AutoAcceptHelper;->isNewOrder(I)Z
+
+    move-result v0
+
+    if-eqz v0, :outer_skip_order
+
+    # postLog(fromCity=v2, toCity=v3, orderId=v1, type=0=current)
+    const/4 v4, 0x0
+    invoke-static {v2, v3, v1, v4}, Lcom/soft373/taxi/services/AutoAcceptHelper;->postLog(Ljava/lang/String;Ljava/lang/String;II)V
+
+    # Restore orderId to v3 for J0 call
+    move v3, v1
 
     # debug: log match
     const-string v2, "TAKERTAP_DBG"
@@ -4607,8 +4811,15 @@
 
     invoke-direct/range {v2 .. v7}, Lcom/soft373/taxi/bridge/services/BridgeOuterService;->J0(ILcom/soft373/taxi/bridge/constants/BridgeDriverActionType;Ljava/lang/Short;Ljava/lang/String;Ljava/lang/String;)V
 
+    goto :outer_auto_accept_done
+
+    :outer_skip_order
+    add-int/lit8 v7, v7, 0x1
+
+    goto :outer_auto_accept_loop
+
     :outer_auto_accept_done
-    # === AUTO-ACCEPT PATCH END (BridgeOuterService) ===
+    # === AUTO-ACCEPT PATCH END (BridgeOuterService — freeOrder) ===
 
     iget-object v0, p0, Lcom/soft373/taxi/bridge/services/BridgeOuterService;->drqjxucmoe:Lcom/soft373/taxi/bridge/services/BridgeMainBinder;
 
@@ -5016,6 +5227,174 @@
 
     :cond_4
     :goto_2
+
+    # === AUTO-ACCEPT PATCH START (BridgeOuterService — preOrder, route-filtered) ===
+    const-string v0, "TAKERTAP_DBG"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "OUTER nqvfgldikg (preOrder) called, orders="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    array-length v2, p1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    # Sync routes from server
+    invoke-static {p0}, Lcom/soft373/taxi/services/AutoAcceptHelper;->startSyncIfNeeded(Landroid/content/Context;)V
+
+    array-length v6, p1
+    const/4 v7, 0x0
+
+    :pre_auto_accept_loop
+    if-ge v7, v6, :pre_auto_accept_done
+
+    aget-object v0, p1, v7
+
+    invoke-virtual {v0}, Lcom/soft373/taxi/bridge/data/BridgeOrder;->getCurrentState()Lcom/soft373/taxi/bridge/constants/BridgeOrderState;
+
+    move-result-object v1
+
+    # debug: log preOrder state
+    const-string v2, "TAKERTAP_DBG"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "PRE order state="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v2, Lcom/soft373/taxi/bridge/constants/BridgeOrderState;->NEW:Lcom/soft373/taxi/bridge/constants/BridgeOrderState;
+
+    if-eq v1, v2, :pre_state_match
+
+    sget-object v2, Lcom/soft373/taxi/bridge/constants/BridgeOrderState;->RESERVATION_ORDER_AWAITING_DRIVERS_APPROVAL:Lcom/soft373/taxi/bridge/constants/BridgeOrderState;
+
+    if-eq v1, v2, :pre_state_match
+
+    sget-object v2, Lcom/soft373/taxi/bridge/constants/BridgeOrderState;->RESERVATION:Lcom/soft373/taxi/bridge/constants/BridgeOrderState;
+
+    if-eq v1, v2, :pre_state_match
+
+    add-int/lit8 v7, v7, 0x1
+
+    goto :pre_auto_accept_loop
+
+    :pre_state_match
+    # Extract from/to city for route check
+    invoke-virtual {v0}, Lcom/soft373/taxi/bridge/data/BridgeOrder;->getBridgeAddressFrom()Lcom/soft373/taxi/bridge/data/BridgeAddress;
+
+    move-result-object v1
+
+    if-eqz v1, :pre_skip_order
+
+    invoke-virtual {v1}, Lcom/soft373/taxi/bridge/data/BridgeAddress;->getLongCity()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :pre_skip_order
+
+    invoke-virtual {v0}, Lcom/soft373/taxi/bridge/data/BridgeOrder;->getBridgeAddressTo()Lcom/soft373/taxi/bridge/data/BridgeAddress;
+
+    move-result-object v1
+
+    if-eqz v1, :pre_skip_order
+
+    invoke-virtual {v1}, Lcom/soft373/taxi/bridge/data/BridgeAddress;->getLongCity()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :pre_skip_order
+
+    # Check route via AutoAcceptHelper
+    invoke-static {p0, v2, v3}, Lcom/soft373/taxi/services/AutoAcceptHelper;->shouldAccept(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :pre_skip_order
+
+    # Route matched! Send notification and accept order
+    invoke-virtual {v0}, Lcom/soft373/taxi/data/DetailedOrder;->getId()I
+
+    move-result v1
+
+    # Dedup check
+    invoke-static {v1}, Lcom/soft373/taxi/services/AutoAcceptHelper;->isNewOrder(I)Z
+
+    move-result v0
+
+    if-eqz v0, :pre_skip_order
+
+    # postLog(fromCity=v2, toCity=v3, orderId=v1, type=1=preOrder)
+    const/4 v4, 0x1
+    invoke-static {v2, v3, v1, v4}, Lcom/soft373/taxi/services/AutoAcceptHelper;->postLog(Ljava/lang/String;Ljava/lang/String;II)V
+
+    # Restore orderId to v3 for J0 call
+    move v3, v1
+
+    const-string v2, "TAKERTAP_DBG"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "OUTER PRE-ORDER AUTO-ACCEPT orderId="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v4, Lcom/soft373/taxi/bridge/constants/BridgeDriverActionType;->DRIVER_TAKE_ORDER:Lcom/soft373/taxi/bridge/constants/BridgeDriverActionType;
+
+    const/4 v5, 0x0
+
+    const-string v6, "auto-accept"
+
+    const/4 v7, 0x0
+
+    move-object v2, p0
+
+    invoke-direct/range {v2 .. v7}, Lcom/soft373/taxi/bridge/services/BridgeOuterService;->J0(ILcom/soft373/taxi/bridge/constants/BridgeDriverActionType;Ljava/lang/Short;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :pre_auto_accept_done
+
+    :pre_skip_order
+    add-int/lit8 v7, v7, 0x1
+
+    goto :pre_auto_accept_loop
+
+    :pre_auto_accept_done
+    # === AUTO-ACCEPT PATCH END (BridgeOuterService — preOrder) ===
+
     iget-object v0, p0, Lcom/soft373/taxi/bridge/services/BridgeOuterService;->drqjxucmoe:Lcom/soft373/taxi/bridge/services/BridgeMainBinder;
 
     sget-object v1, Lcom/soft373/taxi/data/DetailedOrder$OrderType;->preOrder:Lcom/soft373/taxi/data/DetailedOrder$OrderType;
