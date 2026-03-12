@@ -12,8 +12,13 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from typing import Optional
 import uvicorn
+import hmac
+import hashlib
 
-app = FastAPI(title="TakerTap Server", version="1.0.0")
+app = FastAPI(title="TakerTap Server", version="2.0.0")
+
+# Лицензионный ключ — ТОЛЬКО НА СЕРВЕРЕ, НЕ В APK!
+LICENSE_SECRET = os.environ.get("LICENSE_SECRET", "dd681b9c15c12ff50952ec888bb5ab36f270ef140c2ca0fc29e8cc78849f20b5")
 
 DB_PATH    = os.path.join(os.path.dirname(__file__), "takertap.db")
 API_TOKEN  = os.environ.get("TAKERTAP_TOKEN", "").strip()
@@ -132,6 +137,13 @@ class LogIn(BaseModel):
     price: Optional[int] = 0
 
 
+class DecideIn(BaseModel):
+    order_id: int
+    from_city: str = ""
+    to_city: str = ""
+    price: int = 0
+
+
 # ───────────────────────────── Эндпоинты ──────────────────────────────
 
 @app.on_event("startup")
@@ -173,6 +185,99 @@ def get_config_text(x_token: Optional[str] = Header(None)):
     lines = [f"{r['from_kw']}|{r['to_kw']}" for r in rows]
     from fastapi.responses import PlainTextResponse
     return PlainTextResponse("\n".join(lines))
+
+
+def _normalize(text: str) -> str:
+    """Нормализация для матчинга: lowercase + ё→е"""
+    return text.strip().lower().replace("ё", "е")
+
+
+@app.post("/decide")
+def decide_order(body: DecideIn, x_token: Optional[str] = Header(None)):
+    """
+    APK отправляет данные заказа → сервер решает: accept или skip.
+    Вся логика маршрутов — здесь. В APK — ноль логики.
+    """
+    check_auth(x_token)
+    conn = get_db()
+    rows = conn.execute(
+        "SELECT from_kw, to_kw FROM routes WHERE active = 1"
+    ).fetchall()
+    conn.close()
+
+    from_norm = _normalize(body.from_city)
+    to_norm = _normalize(body.to_city)
+
+    matched_rule = None
+    for r in rows:
+        if r["from_kw"] in from_norm and r["to_kw"] in to_norm:
+            matched_rule = f"{r['from_kw']}|{r['to_kw']}"
+            break
+
+    action = "accept" if matched_rule else "skip"
+
+    # Автоматически логируем решение
+    log_conn = get_db()
+    log_conn.execute(
+        "INSERT INTO logs(order_id,from_city,to_city,result,rule,price) VALUES(?,?,?,?,?,?)",
+        (body.order_id, body.from_city, body.to_city, action + "ed", matched_rule or "", body.price)
+    )
+    log_conn.commit()
+    log_conn.close()
+
+    # Push в Telegram при принятии
+    if action == "accept":
+        order_type = "📋 Предварительный" if body.price == 1 else "🚖 Текущий"
+        msg = (
+            f"✅ <b>Сервер: принять заказ</b>\n"
+            f"{order_type}\n"
+            f"📍 {body.from_city} → {body.to_city}\n"
+            f"🆔 Order #{body.order_id}\n"
+            f"📏 Правило: {matched_rule}"
+        )
+        send_tg_notify(msg)
+
+    return {"action": action, "rule": matched_rule or ""}
+
+
+# ───────────────────────────── Лицензирование ──────────────────────────────
+# SECRET_KEY живёт ТОЛЬКО здесь. В APK — ноль секретов.
+
+def _generate_license(device_id: str) -> str:
+    """HMAC-SHA256 первые 16 hex символов — как в оригинале"""
+    mac = hmac.new(
+        LICENSE_SECRET.encode("utf-8"),
+        device_id.encode("utf-8"),
+        hashlib.sha256
+    ).hexdigest().upper()
+    return mac[:16]
+
+
+class LicenseValidateIn(BaseModel):
+    device_id: str
+    code: str
+
+
+@app.post("/license/validate")
+def validate_license(body: LicenseValidateIn):
+    """
+    APK отправляет device_id + введённый код.
+    Сервер проверяет — совпадает ли с правильным.
+    В APK нет SECRET_KEY — сгенерировать лицензию невозможно.
+    """
+    expected = _generate_license(body.device_id)
+    valid = body.code.strip().upper() == expected
+    return {"valid": valid}
+
+
+@app.get("/license/generate/{device_id}")
+def generate_license(device_id: str, x_token: Optional[str] = Header(None)):
+    """Только для админа (бот): сгенерировать лицензию для device_id"""
+    check_auth(x_token)
+    code = _generate_license(device_id)
+    return {"device_id": device_id, "license_code": code}
+
+
 
 
 @app.post("/routes/add")
